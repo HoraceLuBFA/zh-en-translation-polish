@@ -1,0 +1,70 @@
+{
+  "skill": "zh-en-translation-polish",
+  "version": "1.0.0",
+  "source_books": "中式英语之鉴 — Joan Pinkham；汉译英常用表达式经典惯例 — 陆国强",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "把这段政府工作报告风格的文字翻译成英文，要地道：「要进一步加强农业基础设施建设，切实做好防汛抗旱工作，努力实现粮食稳产增产。」",
+      "expected_behavior": "激活本 skill。定档政论/公文（官方定译优先），套语三分法处理「切实做好/努力实现」，范畴词「建设/工作」脱落，输出汉英对照 + 档位与取舍说明。",
+      "notes": "正面：政论体汉译英，核心用例。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "帮我把这个论文摘要翻成英文投期刊，别太中式：本文提出了一种基于注意力机制的文本分类方法……",
+      "expected_behavior": "激活本 skill。定档学术（hedging 全保留、动词强度不升格、警惕术语升格），概念结构化初译 + 九步诊断，输出汉英对照。",
+      "notes": "正面：学术摘要汉译英。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我同事把公司简介翻成英文了，但读着一股中式英语味，帮我去去 Chinglish：With the rapid development of our business, we have made great efforts to provide first-class products...",
+      "expected_behavior": "激活本 skill。这是去 Chinglish 润色场景：跳过初译，直接进诊断流水线（万能 With、make great efforts 套语），回查中文原文（若有）双轨质检。",
+      "notes": "正面：已有英文稿去中式英语，需回查中文源。"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "translate this Chinese paragraph into natural English, bilingual side by side please",
+      "expected_behavior": "激活本 skill，英文指令同样触发，输出中文 blockquote + 英文的汉英对照。",
+      "notes": "正面：英文措辞的汉译英请求。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我把这段英文文章翻译成中文，要去翻译腔",
+      "expected_behavior": "不激活本 skill。这是英译汉，应触发兄弟 skill en-zh-translation-polish。",
+      "notes": "诱饵：跨 skill 混淆测试——方向相反的兄弟 skill 场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我润色一下这封英文求职信，写得更专业些（我直接用英文写的，没有中文原文）",
+      "expected_behavior": "不激活本 skill。纯英文写作润色，无中文源文本，不是翻译任务。",
+      "notes": "诱饵：有「润色英文」但无中文源。"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "「韬光养晦」用英语怎么说？",
+      "expected_behavior": "不激活本 skill，直接答译法即可，单词/短语查询不走完整工作流。",
+      "notes": "诱饵：单条查询。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我用机器翻译把这份中文合同译成英文了，帮我改到像母语者写的，中英对照给我",
+      "expected_behavior": "应激活本 skill，但注意定档：合同属法律文本——形式对应有法律效力，剥壳与删繁全面收敛，含混处问用户而非推定。",
+      "notes": "边界：MTPE + 法律档位，考验打折表而非只考验触发。"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "公司官网要上英文版，这是中文文案，翻得有感染力一点，别像官样文章",
+      "expected_behavior": "应激活本 skill，定档企业外宣/官网：营销改写自由度大，但自称降格、收益承诺收敛两条合规规则不放松。",
+      "notes": "边界：高自由度请求下收敛规则是否仍生效。"
+    }
+  ]
+}
