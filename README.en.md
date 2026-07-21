@@ -160,6 +160,6 @@ zh-en-translation-polish/
 
 Code, prompts, and organization are released under the **MIT License** — see [LICENSE](./LICENSE).
 
-The methodology and exemplars are distilled and paraphrased from **Joan Pinkham, *The Translator's Guide to Chinglish*** (Foreign Language Teaching and Research Press, 2000) and **Lu Guoqiang, *Classic Examples of Converting Chinese to English in Terms of Expressions for Everyday Use*** (Shanghai Foreign Language Education Press), with gratitude. The brief quotations in `reference/` are short excerpts for commentary and teaching; copyright remains with the original authors and publishers. This skill is a method tool, not a substitute for the books — buy them if you want the full course.
+The methodology and exemplars are distilled and paraphrased from **Joan Pinkham, *The Translator's Guide to Chinglish*** (Foreign Language Teaching and Research Press, 2000) and **Lu Guoqiang, *Classic Examples of Converting Chinese to English in Terms of Expressions for Everyday Use*** (Shanghai Foreign Language Education Press, 2012), with gratitude. The brief quotations in `reference/` are short excerpts for commentary and teaching; copyright remains with the original authors and publishers. This skill is a method tool, not a substitute for the books — buy them if you want the full course.
 
 Built with [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills book methodologies into callable AI skills — thanks as well.

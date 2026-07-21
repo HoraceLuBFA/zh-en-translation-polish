@@ -160,6 +160,6 @@ zh-en-translation-polish/
 
 本 skill 的代码、提示词与组织方式以 **MIT 许可**发布，可自由使用、修改、再分发，详见 [LICENSE](./LICENSE)。
 
-方法论与判例蒸馏、转述自 **Joan Pinkham《中式英语之鉴（The Translator's Guide to Chinglish）》（外语教学与研究出版社，2000）** 与 **陆国强《汉译英常用表达式经典惯例》（上海外语教育出版社）**，在此谨致谢忱。`reference/` 中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
+方法论与判例蒸馏、转述自 **Joan Pinkham《中式英语之鉴（The Translator's Guide to Chinglish）》（外语教学与研究出版社，2000）** 与 **陆国强《汉译英常用表达式经典惯例》（上海外语教育出版社，2012）**，在此谨致谢忱。`reference/` 中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
 
 本 skill 借助 [cangjie-skill](https://github.com/kangarooking/cangjie-skill)（将书籍方法论蒸馏为可调用 AI skill 的开源拆书流水线）生成，一并致谢。
