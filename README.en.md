@@ -5,7 +5,7 @@
 ### Translate Chinese into idiomatic, Chinglish-free English, with paragraph-by-paragraph bilingual output
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **English | [中文](./README.md)**
@@ -32,7 +32,7 @@ Good translation therefore rests on four principles:
 - **Dual-track QA** — check the English on its own internal logic *and* against the Chinese source. Pinkham herself read little Chinese and could only run one track; reading the source is this skill's extra eye, so "consult the original before deleting any 'redundancy'" is mandatory;
 - **Tune to the register** — official canonical renderings for policy text, hedging preserved for academic prose, self-claims downgraded and promises softened for corporate copy, deletion rules demoted to suggestions for literature.
 
-Every paragraph runs the full loop — *register & annotation → structurized draft → nine-step diagnosis → dual-track QA → mechanical scan → bilingual output* — and is polished before it ships.
+Select checks appropriate to the register and task, and compare the output against the Chinese source before delivery. Short passages do not require displaying every diagnostic step; accuracy, register, and fidelity still apply.
 
 ## What it is for
 
@@ -53,7 +53,7 @@ Pinkham herself was far more permissive than her rules; drop this layer and the 
 
 ## Workflow
 
-Executed in order; every paragraph completes all stages before delivery.
+The table describes the full workflow. Short passages can be delivered in chat; full-text and project translations retain the default file contract. Explicit monolingual, bilingual, and destination-file choices take precedence.
 
 | Stage | Name | What happens |
 |---|---|---|
@@ -71,6 +71,10 @@ Four reference tables and one script support the workflow (`reference/`, `script
 - **`text-analysis-and-qa.md`** — the seven-register discount table, red lines, and the accuracy QA checklist;
 - **`wordlists.md`** — Chinese trigger words and English warning words (kept in sync with the scanner);
 - **`chinglish_scan.py`** — advisory scanner: warnings are candidates, not verdicts — each one is either fixed or retained with a stated reason.
+
+## Standalone use and document inputs
+
+This skill can be installed and used independently, without another translation skill. For PDF or other document inputs, use the current host’s available reading tools to obtain the source. Preserve the requested text, captions, formulas, citations, and references. Report extraction gaps rather than handing the task to an uninstalled skill.
 
 ## Installation
 
@@ -163,3 +167,7 @@ Code, prompts, and organization are released under the **MIT License** — see [
 The methodology and exemplars are distilled and paraphrased from **Joan Pinkham, *The Translator's Guide to Chinglish*** (Foreign Language Teaching and Research Press, 2000) and **Lu Guoqiang, *Classic Examples of Converting Chinese to English in Terms of Expressions for Everyday Use*** (Shanghai Foreign Language Education Press, 2012), with gratitude. The brief quotations in `reference/` are short excerpts for commentary and teaching; copyright remains with the original authors and publishers. This skill is a method tool, not a substitute for the books — buy them if you want the full course.
 
 Built with [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills book methodologies into callable AI skills — thanks as well.
+
+## Version history
+
+[v1.1.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.1.0) clarifies standalone use, request-scoped delivery, and register-sensitive checks. See [CHANGELOG.md](./CHANGELOG.md). The [v1.0.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.0.0) tag, release notes, and source history remain available.

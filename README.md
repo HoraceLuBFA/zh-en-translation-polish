@@ -5,7 +5,7 @@
 ### 把中文译成地道、无中式英语的英文，并产出逐段“汉英对照”
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **[English](./README.en.md) | 中文**
@@ -32,7 +32,7 @@
 - **双轨质检**——英文内部逻辑与中文原文回查并行。Pinkham 本人不懂中文、只能单轨；能读原文是本 skill 相对原书多出的一只眼，因此“删任何重复前必回原文”是强制步骤；
 - **按文体收放**——政论用官方定译、学术保 hedging、企业外宣自称降格承诺收敛、文学删繁规则全面降档。
 
-每一段译文都走完“定档标注 → 概念结构化初译 → 九步诊断 → 双轨质检 → 机械扫描 → 汉英对照”的完整闭环，逐段打磨之后再交付。
+根据文体与任务选择相关检查，交付前回查中文原文。短文本无需展示所有诊断步骤，准确性、语域和保真要求继续适用。
 
 ## 适用场景
 
@@ -53,7 +53,7 @@
 
 ## 工作流
 
-按序执行，每段译文走完全部阶段后再交付。
+下表说明完整工作流。短段落可直接聊天交付，全文与项目翻译保留默认文件契约；用户指定的单语、双语和目标文件优先。
 
 | 阶段 | 名称 | 做什么 |
 |---|---|---|
@@ -71,6 +71,10 @@
 - **`text-analysis-and-qa.md`**——七类文体打折表、边界红线、准确性质检清单；
 - **`wordlists.md`**——汉语触发词表与英语警戒词表（与扫描脚本同步）；
 - **`chinglish_scan.py`**——机械扫描，只报警不改写：警告是候选不是判决，每条要么改、要么说得出保留理由。
+
+## 独立使用与文档输入
+
+本技能可独立安装使用，无需额外安装其他翻译技能。输入为 PDF 或其他文档时，先使用当前宿主可用的读取工具获取原文；保留用户要求的正文、图表说明、公式、引文和参考文献。无法可靠提取的内容应说明缺口，不将翻译任务转交给用户未安装的技能。
 
 ## 安装
 
@@ -163,3 +167,7 @@ zh-en-translation-polish/
 方法论与判例蒸馏、转述自 **Joan Pinkham《中式英语之鉴（The Translator's Guide to Chinglish）》（外语教学与研究出版社，2000）** 与 **陆国强《汉译英常用表达式经典惯例》（上海外语教育出版社，2012）**，在此谨致谢忱。`reference/` 中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
 
 本 skill 借助 [cangjie-skill](https://github.com/kangarooking/cangjie-skill)（将书籍方法论蒸馏为可调用 AI skill 的开源拆书流水线）生成，一并致谢。
+
+## 版本历史
+
+[v1.1.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.1.0) 明确独立使用、按请求交付与按文体检查。详见 [CHANGELOG.md](./CHANGELOG.md)。[v1.0.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.0.0) 的标签、发布说明和源码历史保留。
