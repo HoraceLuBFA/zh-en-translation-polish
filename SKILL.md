@@ -1,25 +1,20 @@
 ---
 name: zh-en-translation-polish
-description: >-
-  Translates Chinese into idiomatic, Chinglish-free English, optionally as a
-  Chinese-English bilingual version pairing each source paragraph with its
-  translation. Use whenever the user wants to 翻译成英文 / 汉译英 / 中译英,
-  去中式英语 (de-Chinglish an English draft translated from Chinese), or
-  produce a 汉英对照 bilingual rendering — company profiles, policy or
-  government text, academic abstracts, speeches, marketing copy, everyday
-  documents. Trigger even on casual phrasing like "把这段翻成英文" or
-  "帮我把这个翻译润色一下 (into English)". Not for English-to-Chinese
-  (use en-zh-translation-polish), pure English writing unrelated to a
-  Chinese source, or single-word lookups.
+description: Translate Chinese into natural English or polish an English translation against its Chinese source; supports bilingual output. Excludes English-to-Chinese, original English writing, and word lookups.
 license: MIT
-version: 1.0.0
-tags: [translation, english, chinese-to-english, 汉译英, 中式英语, 润色, 汉英对照]
 allowed-tools: Read Write Edit Bash
+metadata:
+  version: 1.0.0
+  tags: [translation, english, chinese-to-english, 汉译英, 中式英语, 润色, 汉英对照]
 ---
 
 # 汉译英翻译润色 (Chinese→English Translate & Polish)
 
 把中文译成**地道英文**并产出**汉英对照**译文。核心信条（Pinkham《中式英语之鉴》+ 陆国强《汉译英常用表达式经典惯例》）：Chinglish 不是语法错误，是**语法全对但母语者不会这么写**的英语；判定标准不是对错而是像不像。它的共同根源是**多余的词**（"Unnecessary words are the hallmark of Chinglish"）。好译文 = **先构造后诊断**——初译用「概念结构化」把汉语义群装进英语结构框架，润色用九步流水线砍掉汉语迁移进来的冗余与错位；全程**双轨质检**（英文逻辑 + 回查中文），这是我们比只懂英文的润色者多出的一只眼。
+
+## 按请求选择交付与检查范围
+
+聊天中的短段落翻译直接在回复中交付，用户要求文件时才落盘；全文或项目翻译沿用下述默认文件契约。用户明确选择纯译文、双语或已有目标文件时按其要求，不重复确认。先保留数字、术语、引文与限定条件，再按文体选择必要的润色检查；短文本不必逐项展示诊断过程或通读所有参考表。研究论文、文学和正式文件的专项边界继续适用。
 
 ## 交付物
 
@@ -40,11 +35,11 @@ allowed-tools: Read Write Edit Bash
 
 若输入只是聊天里的一小段（几句话），直接在回复里给对照即可，不必落盘；成篇文章或用户指明保存才写文件。命名沿用源文件名，无工具前缀（除非用户要）。目标文件已存在则更新而非新建。
 
-## 工作流（严格按序；每段译文都要走完诊断，不是初译就交）
+## 工作流（按文体选用检查，交付前回查源文）
 
 ### 阶段 0 — 定档与通读标注 ★必做第一步
 
-**A. 文体定档**：判定文体类型与规则打折档位，详见 `reference/text-analysis-and-qa.md` 小节 A。一句话档位写进给用户的说明里。
+**A. 文体定档**：判定文体类型与规则打折档位，详见 `reference/text-analysis-and-qa.md` 小节 A。文体取舍影响用户判断时简要说明；短翻译无需另报档位。
 
 - **政论/外宣/公文**：Pinkham 全套规则火力全开（她的语料就是这类），但注意政治定式、领导人讲话的保留规则，以及**官方定译优先**（防汛抗旱 → flood control and drought relief，不自由意译）。
 - **技术文档**：术语固化优先于拆名词串；含混处向用户提问而非擅自推定。
