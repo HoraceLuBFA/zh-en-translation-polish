@@ -1,6 +1,6 @@
 # 词表（汉语触发词 + 英语警戒词）
 
-供人工排查与 `scripts/chinglish_scan.py` 机械扫描共用。所有命中都是**候选不是判决**——每条要么改，要么能说出保留理由（术语/政治定式/hedging/引文）。
+供人工排查；`scripts/chinglish_scan.py` 覆盖其中部分可用正则识别的模式。所有命中都是**候选不是判决**——每条要么改，要么能说出保留理由（术语/政治定式/hedging/引文）。
 
 ## 一、汉语侧触发词（读原文时警觉）
 
@@ -10,7 +10,7 @@
 | 范畴动词 | 进行 加以 作出 予以 给予 实现 实行 实施 开展 展开 从事 搞好 做好 取得 获得 起…作用 产生…影响 | 虚动词+名词（conduct/carry out/make + N） |
 | 套语前缀 | 努力 大力 积极 尽力 竭尽全力 千方百计 着力 · 注意 重视 高度重视 着重 切实 · 搞好 抓好 办好 · 采取措施 采取步骤 | make great efforts to / attach importance to / do a good job in / take measures to |
 | 强调词 | 大力 有效 切实 真正 确实 一定 必将 坚决 彻底 全面 充分 深入 广泛 极大 高度 严重 巨大 伟大 广大 一小撮 成功地 胜利地 | 冗余 intensifier |
-| 弱化词 | 比较 相当 较为 基本上 大体上 有些 稍微 或许 也许 可能 一定程度上 | quite / rather / basically / perhaps（学术档＝hedging 保留） |
+| 弱化词 | 比较 相当 较为 基本上 大体上 有些 稍微 或许 也许 可能 一定程度上 | quite / rather / basically / perhaps（所有文体中均可能承载限定，按源文保留） |
 | 对偶对 | 讨论研究 挫折失败 经验教训 困难和问题 权利和利益 意见和要求 支持和帮助 巩固和发展 改革和完善 加强和改进 培育和发展 审议并通过 制定和实施 情况和特点 体制和结构 影响和作用 | redundant twins |
 | 名词化 | …的实现 …的提高 …的加强 …的调整 …的完成 …的发展 …化 缺乏… 由于… 为了… | noun plague |
 | 无主句框 | 经过… 通过… 在…中 这样做 为了…必须… 作为X，… 随着… | 垂悬修饰语 / 万能 with |
@@ -18,7 +18,7 @@
 
 ## 二、英语侧警戒词（扫描译文）
 
-### 2.1 空壳框架（见到先试删/重构）
+### 2.1 结构候选（核对有无实义后再判断）
 
 `the fact that` · `the situation in which` · `a situation where` · `this state of affairs` · `lies in the fact that` · `the key to ... lies in` · `is a subject that` · `constitute a period in which` · `in the field of` · `in the sphere of` · `the work of` · `the cause of`(政治义) · `the practice of` · `the phenomenon of/that` · `the process of`(泛指)
 
@@ -26,43 +26,43 @@
 
 situation, condition(泛指), problem(泛指), question(泛指), work, task, job, activity/activities, matter, issue(泛指), process, practice, phenomenon, cause, factor, aspect, respect, field, sphere, area(抽象), sector, level(抽象), degree, scale, extent, scope, role, function, character, nature, status, state, sense, spirit, atmosphere, measure(泛指), method(泛指), way(泛指), form, style, system(泛指), objective, goal, purpose, requirement, basis, foundation, means, efforts, attention, importance, significance
 
-### 2.3 套语动词短语（默认删，动作直接做谓语）
+### 2.3 动词短语候选（保留尝试、力度、优先级与目标）
 
-make (great/every) efforts to · exert efforts to · try our best to · do our utmost to · pay attention to · pay heed to · attach importance to · lay stress on · do a good job in/of · make a success of · take measures to · take steps to · adopt a policy of(判断三档) · make an improvement in · conduct a/an ... of · carry out the ... of · give guidance to · provide assistance to · exercise control over · register an increase · place stress on · achieve success in · bring about an improvement · give play to · give full scope to · play a role in · is of great significance
+make (great/every) efforts to · exert efforts to · try our best to · do our utmost to · pay attention to · pay heed to · attach importance to · lay stress on · do a good job in/of · make a success of · take measures to · take steps to · adopt a policy of(核对政策含义) · make an improvement in · conduct a/an ... of · carry out the ... of · give guidance to · provide assistance to · exercise control over · register an increase · place stress on · achieve success in · bring about an improvement · give play to · give full scope to · play a role in · is of great significance
 
-### 2.4 抽象名词后缀（密度扫描：一句 ≥2 报警 ≥3 必改）
+### 2.4 抽象名词后缀（扫描在单句片段命中 ≥3 时提示，人工判断）
 
 `-tion -sion -ment -ance -ence -ity -ness -ship -ism -al -ure -age -ancy -cy -hood -sis`
 
-### 2.5 「必然引出名词」的介词框架（→ 换连词/动词）
+### 2.5 介词框架（必要时改写，保留原有逻辑关系）
 
 due to · owing to · as a result of · resulted from · in view of · with regard to · in the course of · for the purpose of · in the process of · by means of · on the basis of · through the ... of · lack of · shortage of · absence of · in terms of
-→ 首选替换：because / when / if / by V-ing / to V
+可按原有关系考虑从句、动词或保留原结构；because、when、if 分别表达不同关系，不能只为减少名词而互换。
 
-### 2.6 陈套强调副词（每页 ≤2 次）
+### 2.6 强调副词（计数供查看分布，不设删除阈值）
 
-resolutely, unswervingly, vigorously, conscientiously, energetically, persistently, unremittingly, diligently · 四大默认删：actively, effectively, actually/truly/really, successfully · 其他：firmly(垫强词时), thoroughly, totally, completely(垫强词时), broad masses
+resolutely, unswervingly, vigorously, conscientiously, energetically, persistently, unremittingly, diligently · 按语义判断：actively, effectively, actually/truly/really, successfully · 其他：firmly(垫强词时), thoroughly, totally, completely(垫强词时), broad masses
 
 ### 2.7 可疑连接词
 
-- 句首 `With ...,`（「随着」条件反射）→ When / Because / Thanks to / Staffed by / Considering / for all，或拆句
-- `while`（非时间义）→ although / whereas / on the other hand
-- `based on` 句首 → On the basis of / In light of / Having studied
+- 句首 `With ...,`：检查伴随、背景、原因等读法是否符合源文；没有因果依据时不改为 Because / Thanks to。
+- `while` 可以表时间、对比或让步，只有实际语境产生有影响的歧义时才调整。
+- `based on` 句首：检查它修饰的对象；Based on the data, the report... 可以成立。
 - `in order to` → 多可删 in order
-- `and` 连接逻辑上不能同时成立的两项 → or
+- `and` 与 `or`：按原文的并列或选择关系判断，同时核对单个对象与多个对象的范围。
 - `and so / therefore` 滥用 → 核实因果是否真成立
 
-### 2.8 垂悬白名单（防误报，不改）
+### 2.8 常见独立表达与附着检查
 
 generally speaking · judging from/by · barring · owing to · according to · provided (that) · concerning · regarding · assuming · allowing for · granted that · considering(介词义)
-**不在白名单**：based on · in order to serve you better 类
+上述词组不构成穷尽白名单。based on 与 in order to serve you better 等须检查实际修饰对象及动作主体，不能仅按起句词组判定垂悬。
 
-## 三、十二类逻辑连接词查词表（按关系补词）
+## 三、十二类逻辑连接词查词表（先确认关系，再按需选词）
 
 | 关系 | 候选词 |
 |---|---|
-| 因果 ★缺失最伤 | because, since, so, thus, therefore, accordingly, as a result, consequently, for this reason, thanks to |
-| 转折 ★次伤 | but, however, yet, nevertheless, on the contrary, instead, on the other hand, whereas |
+| 因果 | because, since, so, thus, therefore, accordingly, as a result, consequently, for this reason, thanks to |
+| 转折 | but, however, yet, nevertheless, on the contrary, instead, on the other hand, whereas |
 | 增补 | and, also, moreover, besides, furthermore, what is more, indeed |
 | 让步 | although, though, granted, to be sure, of course, admittedly, it is true that |
 | 条件 | if, unless, otherwise, provided that, once |
@@ -74,6 +74,6 @@ generally speaking · judging from/by · barring · owing to · according to · 
 | 复述 | that is, in other words, namely |
 | 结论 | thus, so, in short, to sum up, all in all |
 
-## 四、范畴动词配对速查（虚动词短语 → 单动词）
+## 四、范畴动词配对速查（可能的简化方式，须核对时态、角色与语义）
 
 make an investigation of=investigate · make a careful study of=study carefully · make a decision to=decide to · make a proposal that=propose that · make an analysis of=analyze · have a dislike for=dislike · have trust in=trust · have an influence on=influence · have respect for=respect · have the need for=need · give guidance to=guide · provide assistance to=assist · carry out the struggle against=struggle against · conduct reform of=reform · engage in free discussion of=discuss freely · achieve success in=succeed in · accomplish the modernization of=modernize · realize the transformation of=transform · bring about an improvement in=improve · place stress on=stress · exercise control over=control · register an increase=increase

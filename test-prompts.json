@@ -1,34 +1,34 @@
 {
   "skill": "zh-en-translation-polish",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "source_books": "中式英语之鉴 — Joan Pinkham；汉译英常用表达式经典惯例 — 陆国强",
   "test_cases": [
     {
       "id": "should-trigger-01",
       "type": "should_trigger",
       "prompt": "把这段政府工作报告风格的文字翻译成英文，要地道：「要进一步加强农业基础设施建设，切实做好防汛抗旱工作，努力实现粮食稳产增产。」",
-      "expected_behavior": "激活本 skill。定档政论/公文（官方定译优先），套语三分法处理「切实做好/努力实现」，范畴词「建设/工作」脱落，输出汉英对照 + 档位与取舍说明。",
+      "expected_behavior": "激活本 skill，保留进一步、建设、有效防汛抗旱和努力达成稳产增产目标的意义。短文本在聊天中交付汉英对照，不强制展示诊断过程。",
       "notes": "正面：政论体汉译英，核心用例。"
     },
     {
       "id": "should-trigger-02",
       "type": "should_trigger",
       "prompt": "帮我把这个论文摘要翻成英文投期刊，别太中式：本文提出了一种基于注意力机制的文本分类方法……",
-      "expected_behavior": "激活本 skill。定档学术（hedging 全保留、动词强度不升格、警惕术语升格），概念结构化初译 + 九步诊断，输出汉英对照。",
+      "expected_behavior": "激活本 skill，按学术语域组织英文，保留原文限定、证据范围、术语和论断强度，不套固定动词阶梯。只翻译已提供内容，不能补全省略号后的摘要。",
       "notes": "正面：学术摘要汉译英。"
     },
     {
       "id": "should-trigger-03",
       "type": "should_trigger",
       "prompt": "我同事把公司简介翻成英文了，但读着一股中式英语味，帮我去去 Chinglish：With the rapid development of our business, we have made great efforts to provide first-class products...",
-      "expected_behavior": "激活本 skill。这是去 Chinglish 润色场景：跳过初译，直接进诊断流水线（万能 With、make great efforts 套语），回查中文原文（若有）双轨质检。",
+      "expected_behavior": "识别为中译英译稿润色，可先检查英文表达；中文源文未提供，只能说明语言层面的判断，不能确认忠实度。不因 With 或 make great efforts to 出现就删改其逻辑、尝试和力度。",
       "notes": "正面：已有英文稿去中式英语，需回查中文源。"
     },
     {
       "id": "should-trigger-04",
       "type": "should_trigger",
       "prompt": "translate this Chinese paragraph into natural English, bilingual side by side please",
-      "expected_behavior": "激活本 skill，英文指令同样触发，输出中文 blockquote + 英文的汉英对照。",
+      "expected_behavior": "识别为本 skill 的任务方向；尚未提供待译中文，需取得源文后才能翻译，不虚构段落。",
       "notes": "正面：英文措辞的汉译英请求。"
     },
     {
@@ -56,15 +56,123 @@
       "id": "edge-01",
       "type": "edge_case",
       "prompt": "我用机器翻译把这份中文合同译成英文了，帮我改到像母语者写的，中英对照给我",
-      "expected_behavior": "应激活本 skill，但注意定档：合同属法律文本——形式对应有法律效力，剥壳与删繁全面收敛，含混处问用户而非推定。",
-      "notes": "边界：MTPE + 法律档位，考验打折表而非只考验触发。"
+      "expected_behavior": "应激活本 skill；取得中文合同及英文译稿后按段核对，保留义务、权利、条件、否定和数字，含混处不擅自推定。用户请求自然英文不授权改变合同内容。",
+      "notes": "边界：MTPE 与法律文本，核对源文和义务、权利、条件。"
     },
     {
       "id": "edge-02",
       "type": "edge_case",
       "prompt": "公司官网要上英文版，这是中文文案，翻得有感染力一点，别像官样文章",
-      "expected_behavior": "应激活本 skill，定档企业外宣/官网：营销改写自由度大，但自称降格、收益承诺收敛两条合规规则不放松。",
-      "notes": "边界：高自由度请求下收敛规则是否仍生效。"
+      "expected_behavior": "应激活本 skill，取得文案后自然呈现感染力，同时保留原文宣称、承诺和限定。未获改写授权时，不自动降低排名、自我评价或把收益承诺改成价值承诺。",
+      "notes": "边界：有感染力不等于授权改变事实、宣称与承诺。"
+    }
+  ],
+  "quality_evaluation": {
+    "purpose": "语义质量与语言表达评估，独立于触发判定和脚本测试；这些案例由维护者编写，不是模型实测成绩。",
+    "translation_input": "仅把案例中的 request、source_zh 和可选 draft_en 提供给待测翻译模型；不暴露 must_preserve、must_not_add、review_focus 或评分规则。",
+    "comparison": "比较版本时保持宿主、模型、参数、输入和交付要求一致，各自新会话运行；保留原始输出，不用人工修订稿替换首轮结果。",
+    "review": "评审者按全部源文逐段双向核对，逐项记录通过/失败及源文和译文证据；不只抽样已知关键词。可匿名乱序比较输出，记录评审者身份与参与方式。",
+    "acceptance": "任一明确遗漏、无依据增译、情态或逻辑变化、归属错误均须记录为语义缺陷，不能由流畅度、零警告或平均分抵消。表达自然度、语域和格式分别评价。",
+    "long_text": "Q03 覆盖多段与归属风险；真实长文验收另用完整授权原文，按章节分批并合并核查，不把本短例通过外推为长文质量已证。",
+    "reporting": "分别报告触发结果、机械回归与实际翻译质量；未运行模型翻译时明确标为未实测，不以静态审阅代替模型成绩。"
+  },
+  "quality_cases": [
+    {
+      "id": "Q01",
+      "category": "policy_effort_modality_scope",
+      "request": "翻译为自然英文，汉英对照。",
+      "source_zh": "我们将进一步加强农业基础设施建设，努力实现粮食稳产增产。只有完成本轮检查，项目才可能恢复施工。所有参与单位须各提交两份纸质报告，不接受电子版。",
+      "must_preserve": [
+        "进一步加强建设及将来计划",
+        "努力实现目标，未声称已经实现或必定实现",
+        "完成检查是必要条件，恢复施工仍只是可能",
+        "所有单位逐一提交两份纸质报告",
+        "电子版不接受"
+      ],
+      "must_not_add": [
+        "既成稳产增产结果",
+        "只要完成检查就必然复工",
+        "全部单位合计两份",
+        "未提供的政府、日期或地点"
+      ],
+      "review_focus": "逐一分配、努力/结果、only if 与 may 的范围。"
+    },
+    {
+      "id": "Q02",
+      "category": "academic_measurement_uncertainty",
+      "request": "把以下摘要片段译成英文，保留技术含义。",
+      "source_zh": "在约 24 °C 条件下，我们对 18 个样本进行了三次测量。结果表明，该方法在大多数情况下可能略微降低误差，但尚不能证明这种变化由校准引起。我们还将探索模型压缩的可能性。",
+      "must_preserve": [
+        "约 24 °C、18 个样本、三次测量",
+        "大多数情况下、可能、略微",
+        "尚不能证明校准导致变化",
+        "未来探索的是模型压缩的可能性"
+      ],
+      "must_not_add": [
+        "误差降低具有统计显著性",
+        "因果已被确认",
+        "已开展某种压缩技术或已确定模型可压缩",
+        "研究采用 few-shot 范式"
+      ],
+      "review_focus": "数量单位、论断范围与认识状态，名词化改写不收窄研究对象。"
+    },
+    {
+      "id": "Q03",
+      "category": "mixed_report_speakers_caption",
+      "request": "完整翻译下文，保留标题、发言者、图注与段落顺序。",
+      "source_zh": "# 现场记录：两套系统\n\n记者：展厅共有两套原型系统，分别用于预演和现场监看。它们尚未投入正式拍摄。\n\n工程师林说：“更换控制器后，延迟从约 42 毫秒降至 31 毫秒。我们还不能确定原因，下一轮会检查网络和同步设置。”\n\n摄影师周说：“我只试用了预演系统。画面偶尔像隔着一层薄雾，但这种感觉并非每次都出现。”\n\n图 1：工作人员在校准监视器。该照片摄于演示前一天，未展示更换后的控制器。\n\n补记：团队计划新建两条测试线路，并改造现有三条线路；具体工期尚未确定。",
+      "must_preserve": [
+        "标题与两套系统的不同用途、未正式拍摄",
+        "林的约 42 到 31 毫秒及原因未定、下轮两项检查",
+        "周只使用预演系统、偶发薄雾比喻及并非每次",
+        "图 1 的人物动作、前一天拍摄、未展示新控制器",
+        "新建两条和改造现有三条两项计划、工期未定"
+      ],
+      "must_not_add": [
+        "更换控制器导致延迟下降",
+        "周试用两套系统",
+        "图中使用新控制器",
+        "把林的技术结论归给周",
+        "把新建与改造改成二选一或补施工主体"
+      ],
+      "review_focus": "完整覆盖、跨段归属、时间与因果、比喻和并列。"
+    },
+    {
+      "id": "Q04",
+      "category": "corporate_claims_and_voice",
+      "request": "把中文官网文案译成有感染力的英文，保持原意。",
+      "source_zh": "我们是本地市场排名第一的供应商，承诺在收到完整资料后 48 小时内回复。我们相信，长期合作可能为双方带来更好的回报。对创始人而言，这间工作室一直是暴风雨中的一盏灯。",
+      "must_preserve": [
+        "本地市场排名第一这一原文自称",
+        "收到完整资料后 48 小时内回复的承诺",
+        "我们相信、长期合作、可能、双方、更好回报",
+        "创始人视角、一直、暴风雨中一盏灯的意象"
+      ],
+      "must_not_add": [
+        "改成仅为行业知名企业或全球第一",
+        "承诺 48 小时内交付",
+        "保证双方获得收益或把回报改成价值承诺",
+        "删去意象或引入未经提供的创始人经历"
+      ],
+      "review_focus": "忠实翻译与文案改写的权限边界，声明可另行提示核实但不擅改。"
+    },
+    {
+      "id": "Q05",
+      "category": "source_grounded_polish_valid_english",
+      "request": "对照中文润色英文，已经自然准确的表达可以保留。",
+      "source_zh": "这份基于数据的报告建议谨慎行事。第一组有所改善，而第二组保持稳定。每位参与者可以选择自己的显示名称。",
+      "draft_en": "Based on the data, the report recommends caution. While the first group improved, the second remained stable. Each participant may choose their own display name.",
+      "must_preserve": [
+        "报告以数据为依据并建议谨慎",
+        "第一组改善与第二组稳定的对比",
+        "每位参与者可选择自己的显示名称"
+      ],
+      "must_not_add": [
+        "报告已经证明结论",
+        "把 may 改成 must",
+        "给参与者指定性别或缩小选择范围"
+      ],
+      "review_focus": "合法 based on、对比 while 和 singular they 不为消除词表命中而强改。"
     }
   ]
 }

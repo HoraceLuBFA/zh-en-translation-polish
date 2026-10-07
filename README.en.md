@@ -2,172 +2,129 @@
 
 # zh-en-translation-polish
 
-### Translate Chinese into idiomatic, Chinglish-free English, with paragraph-by-paragraph bilingual output
+### Translate Chinese into faithful, natural English, with paragraph-paired bilingual output
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.1-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **English | [中文](./README.md)**
 
 </div>
 
----
+## What this skill does
 
-## Philosophy
+This skill translates Chinese into English and polishes existing English translations against their Chinese source. It draws on Joan Pinkham’s *The Translator’s Guide to Chinglish* and Lu Guoqiang’s *汉译英常用表达式经典惯例*: establish meaning and semantic roles, choose natural English structures, then check the source and translation in both directions.
 
-This skill turns the Chinese-to-English methodology of two complementary classics into an executable pipeline:
+Fidelity applies to every register. Preserve facts, numbers, qualifications, logical relations, tone, and imagery. Keep attempts distinct from results, possibility from certainty, and sequence from causation. Simplify only when the meaning remains fully represented; fluency and brevity cannot substitute for accuracy.
 
-- **Joan Pinkham, *The Translator's Guide to Chinglish*** — subtraction and diagnosis: how to recognize and fix thirteen families of Chinglish symptoms;
-- **Lu Guoqiang, *Classic Examples of Converting Chinese to English*** — addition and construction: conceptual structurization, fitting Chinese sense groups into English structural frames.
+## Uses and boundaries
 
-The core conviction comes from Pinkham:
+| Use | Focus |
+|---|---|
+| Policy and official documents | Established terminology, policy scope, emphasis, goals, and commitments |
+| Academic and technical writing | Terminology, evidence limits, modality, numbers, units, and appropriate syntax |
+| Business correspondence and corporate websites | Politeness and the original strength of claims and promises; copywriting changes require user authorization |
+| News, interviews, and industry reports | Concrete examples, speaker attribution, headings, and captions |
+| Speeches, essays, and personal writing | Meaningful repetition, rhythm, metaphor, and individual voice |
+| Existing English translations | Source-grounded checks for omissions, additions, and expression; accurate, natural wording can stay |
 
-> Chinglish is not ungrammatical English — it is English that is grammatically correct **but that no educated native speaker would write**. Its common root is surplus words: *"Unnecessary words are the hallmark of Chinglish."*
-
-Good translation therefore rests on four principles:
-
-- **Construct first, then diagnose** — the draft is not word-for-word mapping but slot-filling: segment the Chinese sense groups, find the English structural core (a fixed verb + noun + preposition frame), assign each group to its semantic slot;
-- **Cut what Chinese smuggles in** — category nouns, exhortation boilerplate, redundant four-character twins, noun plagues, dangling modifiers, and missing logical connectives, fixed one symptom at a time;
-- **Dual-track QA** — check the English on its own internal logic *and* against the Chinese source. Pinkham herself read little Chinese and could only run one track; reading the source is this skill's extra eye, so "consult the original before deleting any 'redundancy'" is mandatory;
-- **Tune to the register** — official canonical renderings for policy text, hedging preserved for academic prose, self-claims downgraded and promises softened for corporate copy, deletion rules demoted to suggestions for literature.
-
-Select checks appropriate to the register and task, and compare the output against the Chinese source before delivery. Short passages do not require displaying every diagnostic step; accuracy, register, and fidelity still apply.
-
-## What it is for
-
-- **De-Chinglishing** — *make great efforts to*, *attach great importance to*, universal *With*, noun-string pileups, sentence-initial danglers: each detected and repaired;
-- **Policy and government text** — a three-way rule for boilerplate (delete lead-ins, re-express central predicates idiomatically), canonical official renderings first, preservation rules for set political phrases;
-- **Academic abstracts and papers** — hedges preserved one-for-one, a verb-strength ladder (show < demonstrate < verify < confirm), guard against covert term upgrades (小样本 → *few-shot*);
-- **Corporate websites** — self-claims downgraded (*a leading company*, not *We lead this industry*), return promises converged into value commitments (a compliance concern);
-- **Maintaining bilingual documents** — the side-by-side file is the single source of truth; the English-only version is derived by script, so the two never drift.
-
-## Boundaries
-
-Pinkham herself was far more permissive than her rules; drop this layer and the skill becomes an indiscriminate word-deleter:
-
-- **A suspect phrase "is mere padding three times out of four — the fourth time it carries meaning."** Seeing one triggers judgment, not deletion;
-- **When in doubt, keep both** — in formal documents "it is better to risk including a redundancy than to risk losing an element of the intended sense" (Sol Adler: *meaning must have priority over elegance*);
-- **Five grades of modifier rigidity** — pure redundancies may be cut on sight; intensifiers may be fixed political formulas that must stay; qualifiers may be deliberate modesty (or academic hedging) that must stay;
-- **Never trade accuracy for idiom** — synonym substitution must preserve meaning. Bottom line: **a comprehension error has no excuse.**
-
-## Workflow
-
-The table describes the full workflow. Short passages can be delivered in chat; full-text and project translations retain the default file contract. Explicit monolingual, bilingual, and destination-file choices take precedence.
-
-| Stage | Name | What happens |
-|---|---|---|
-| 0 | Register & annotation | Pick one of seven registers; pre-mark logical relations, list word-classes, heading templates, and sentence focus on the Chinese side |
-| 1 | Structurized draft | Segment sense groups → find the structural core → fill semantic slots → verify semantic compatibility |
-| 2 | Nine-step diagnosis | Cut surplus words → kill nominalization → fix danglers → fix parallelism → reorder for end-focus → add connectives → fix pronouns → read aloud → cascade check |
-| 3 | Dual-track QA | Independent English-logic pass + line-by-line check against the Chinese; 20–50% compression self-check |
-| 4 | Mechanical scan | Script flags full-width punctuation, shell frames, boilerplate, abstract-noun density, sentence-initial *With* / *based on*, ambiguous *while* |
-| 5 | Bilingual output | Paragraph-paired file plus a one-line note on register ruling and key trade-offs |
-
-Four reference tables and one script support the workflow (`reference/`, `scripts/`):
-
-- **`chinglish-symptoms.md`** — thirteen symptom families: Chinese trigger → mechanical test → fix → judgment boundary;
-- **`techniques.md`** — four construction methods + 16 Chinese-to-English structural transformation patterns + a quick-reference of high-frequency conceptual structures;
-- **`text-analysis-and-qa.md`** — the seven-register discount table, red lines, and the accuracy QA checklist;
-- **`wordlists.md`** — Chinese trigger words and English warning words (kept in sync with the scanner);
-- **`chinglish_scan.py`** — advisory scanner: warnings are candidates, not verdicts — each one is either fixed or retained with a stated reason.
-
-## Standalone use and document inputs
-
-This skill can be installed and used independently, without another translation skill. For PDF or other document inputs, use the current host’s available reading tools to obtain the source. Preserve the requested text, captions, formulas, citations, and references. Report extraction gaps rather than handing the task to an uninstalled skill.
+English-to-Chinese translation, polishing prose originally written in English, and individual word lookups are outside the full workflow. Without the Chinese source, the skill can assess English expression but cannot establish translation fidelity. Summaries, abridgments, and promotional adaptations follow the scope explicitly requested by the user.
 
 ## Installation
 
-**Option 1 · One-liner (recommended)**
+Install with the [skills CLI](https://github.com/vercel-labs/skills), selecting your target agent when prompted:
 
 ```bash
 npx skills add -g HoraceLuBFA/zh-en-translation-polish
 ```
 
-> [`npx skills`](https://github.com/vercel-labs/skills) installs into `~/.agents/skills/` — the shared skills directory — and sets up the symlinks each agent needs.
+Alternatively, give the repository link to an agent that supports skill installation:
 
-**Option 2 · Let your agent install it**
+> Install this skill: https://github.com/HoraceLuBFA/zh-en-translation-polish
 
-Send the repo link to your coding agent (Claude Code / Codex / Gemini CLI, etc.):
-
-> Install this skill for me: https://github.com/HoraceLuBFA/zh-en-translation-polish
-
-**Option 3 · Manual clone**
+For a manual installation, clone into the shared skills directory. Inspect any existing directory before proceeding:
 
 ```bash
 git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/skills/zh-en-translation-polish
 ```
 
-Verify:
-
-```bash
-test -f ~/.agents/skills/zh-en-translation-polish/SKILL.md && echo OK
-```
+Check that `SKILL.md` exists and confirm availability in your host’s skill list. Discovery after a manual clone depends on host configuration; a file on disk does not prove that the skill is loaded. No other translation skill is required. The mechanical scanner needs Python 3 and uses only its standard library.
 
 ## Usage
 
-**Natural language** — just ask; agents with auto-triggering load the skill from the `description` field:
+Once installed and enabled, ask in natural language or name `zh-en-translation-polish` in a host that supports explicit invocation. Supply the Chinese text; for revision, include both the Chinese source and the English draft whenever possible.
 
-- "把这段中文翻译成英文，要地道，别有中式英语味……"
-- "Translate this Chinese abstract into English for journal submission, bilingual please."
-- "This English draft my colleague translated reads Chinglish — polish it."
+- “Translate this Chinese passage into natural English, with bilingual output: …”
+- “Translate this Chinese abstract into English only, preserving every qualification.”
+- “Polish this English draft against its Chinese source; retain numbers, terms, and quotations.”
+- “Translate this interview in full, preserving speakers, captions, and paragraph order, and save it to the specified file.”
 
-**Explicit invocation**:
+Short passages are delivered in chat without a mandatory file or diagnostic report. Explicit English-only, bilingual, and destination-file requests take precedence. Existing target files are updated as requested.
 
-```text
-# Claude Code: slash command
-/zh-en-translation-polish path/to/document.md
+For PDFs and other documents, the host’s available reading tools obtain the source. Text, captions, formulas, quotations, and references are preserved within the requested scope. Extraction gaps are reported rather than filled by inference.
 
-# Codex: invoke with $ (or pick from /skills)
-$zh-en-translation-polish path/to/document.md
-```
+## Workflow
 
-> ⚠️ **English-only output**: this skill produces a **Chinese-English side-by-side file by default**. If you want the English only, say so explicitly — e.g. "English only, no bilingual pairing".
+| Stage | Work |
+|---|---|
+| 0 · Read and identify register | Establish scope, subjects, relations, parallel items, headings, and sentence focus |
+| 1 · Draft | Organize English around meaning and roles without inventing facts to fit a structure |
+| 2 · Diagnose expression | Review redundancy, nominalization, attachment, parallelism, order, connectives, and reference as needed |
+| 3 · Check in both directions | Check coverage from the source and grounding from the translation; review modality, scope, numbers, and attribution |
+| 4 · Scan | Run the advisory scanner on saved translations and assess its candidates |
+| 5 · Deliver | Follow the requested format; derive an English-only file from the checked bilingual file when needed |
 
-## Deliverables
+Long texts are translated and checked by section, speaker, or a few consecutive paragraphs, followed by a check of order, completeness, terminology, and reference after assembly. Length, paragraph counts, zero warnings, and model self-reports do not establish semantic quality. There is no compression target.
 
-1. **`<name> 翻译(汉英对照).md`** — single source of truth: each Chinese paragraph as a blockquote, followed by its English translation;
-2. **`<name> 翻译(全英文).md`** (on request) — derived from the bilingual file by script;
-3. A short note stating the register ruling and the main trade-offs.
+## File format and example
 
-## Preview
+Full-document and project translations default to `<name> 翻译(汉英对照).md`, with each Chinese paragraph in a blockquote followed by its English translation. An optional `<name> 翻译(全英文).md` is derived mechanically from the checked bilingual file so the English is not rewritten separately. Shared images, tables, formulas, code, and links are preserved as content requires.
 
 > 要进一步加强农业基础设施建设，切实做好防汛抗旱工作，努力实现粮食稳产增产。
 
-We should strengthen agricultural infrastructure, ensure effective flood control and drought relief, and keep grain output stable and growing.
+We should further strengthen agricultural infrastructure development, ensure effective flood control and drought relief, and work to stabilize and increase grain output.
 
-*(Register: policy/official — canonical renderings first; the category noun 「建设」 dropped, boilerplate 「切实做好／努力实现」 resolved, 「防汛抗旱」 rendered with the canonical* flood control and drought relief*.)*
+This example retains further development and the effort to achieve stable, increased output, using three parallel predicates. A short explanatory note accompanies actual delivery only when a register choice or evidence gap affects interpretation.
 
-## Sister skill
+## Mechanical scanning and validation
 
-For the opposite direction (English → Chinese), use **[en-zh-translation-polish](https://github.com/HoraceLuBFA/en-zh-translation-polish)** — distilled from Ye Zinan's *Advanced Course in English-Chinese Translation*, it produces idiomatic, translationese-free Chinese with bilingual pairing. The two skills are structural mirrors, one per direction.
-
-## Repository layout
-
-```text
-zh-en-translation-polish/
-├── SKILL.md                       # Main entry (workflow + derivation script)
-├── README.md                      # Project readme (for humans)
-├── reference/
-│   ├── chinglish-symptoms.md      # Thirteen Chinglish symptom families
-│   ├── techniques.md              # Conceptual structurization + 16 patterns
-│   ├── text-analysis-and-qa.md    # Register discounts + red lines + QA checklist
-│   └── wordlists.md               # Trigger words + warning words
-├── scripts/
-│   └── chinglish_scan.py          # Mechanical scanner (advisory)
-├── test-prompts.json              # Trigger / decoy / edge-case tests
-├── LICENSE
-└── .gitignore
+```bash
+python3 scripts/chinglish_scan.py "article 翻译(汉英对照).md"
+python3 scripts/chinglish_scan.py "article 翻译(全英文).md" --plain
 ```
 
-## Acknowledgements & License
+Run these commands from the repository, or use the script’s actual path. By default, the scanner skips source blockquotes, common code structures, and link destinations while inspecting English prose and pipe-table cells. `--plain` includes English blockquotes and every table column. Columns explicitly headed 中文, 原文, or Chinese are skipped by default.
 
-Code, prompts, and organization are released under the **MIT License** — see [LICENSE](./LICENSE).
+The scanner reports candidates involving Chinese punctuation, verb phrases, noun density, and modifier attachment. It neither edits files nor verifies translation fidelity. English curly quotes, apostrophes, ellipses, and en/em dashes are valid punctuation. Complex nested Markdown, HTML, and formulas still require human review. Successful scans exit with code 0; invalid arguments or unreadable inputs exit with code 2.
 
-The methodology and exemplars are distilled and paraphrased from **Joan Pinkham, *The Translator's Guide to Chinglish*** (Foreign Language Teaching and Research Press, 2000) and **Lu Guoqiang, *Classic Examples of Converting Chinese to English in Terms of Expressions for Everyday Use*** (Shanghai Foreign Language Education Press, 2012), with gratitude. The brief quotations in `reference/` are short excerpts for commentary and teaching; copyright remains with the original authors and publishers. This skill is a method tool, not a substitute for the books — buy them if you want the full course.
+Maintainers can run the mechanical regression suite:
 
-Built with [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills book methodologies into callable AI skills — thanks as well.
+```bash
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
+```
 
-## Version history
+[test-prompts.json](./test-prompts.json) contains trigger, exclusion, boundary, and semantic quality cases with a separate evaluation protocol. These support future model evaluation; passing script tests does not demonstrate translation quality.
 
-[v1.1.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.1.0) clarifies standalone use, request-scoped delivery, and register-sensitive checks. See [CHANGELOG.md](./CHANGELOG.md). The [v1.0.0](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.0.0) tag, release notes, and source history remain available.
+## Repository contents
+
+| File | Purpose |
+|---|---|
+| [SKILL.md](./SKILL.md) | Skill entry point, workflow, and delivery contract |
+| [reference/techniques.md](./reference/techniques.md) | Structural methods, 16 transformation patterns, and candidate expressions |
+| [reference/chinglish-symptoms.md](./reference/chinglish-symptoms.md) | Expression diagnostics, examples, and boundaries |
+| [reference/text-analysis-and-qa.md](./reference/text-analysis-and-qa.md) | Register choices and accuracy checks |
+| [reference/wordlists.md](./reference/wordlists.md) | Manual review lists; the scanner covers a subset of candidate patterns |
+| [scripts/chinglish_scan.py](./scripts/chinglish_scan.py) | Read-only advisory scanner |
+| [scripts/test_chinglish_scan.py](./scripts/test_chinglish_scan.py) | Scanner regression tests |
+| [test-prompts.json](./test-prompts.json) | Trigger and quality evaluation cases |
+
+For the reverse direction, see the sister skill [en-zh-translation-polish](https://github.com/HoraceLuBFA/en-zh-translation-polish).
+
+## Credits and license
+
+The code, prompts, and organization are released under the [MIT License](./LICENSE). The methods draw on Joan Pinkham’s *The Translator’s Guide to Chinglish* (Foreign Language Teaching and Research Press, 2000) and Lu Guoqiang’s *汉译英常用表达式经典惯例* (Shanghai Foreign Language Education Press, 2012). Reference tables are teaching adaptations for this skill and do not replace the books; rights to the original works and quotations remain with their respective holders. Thanks to [cangjie-skill](https://github.com/kangarooking/cangjie-skill) for its tools for organizing methods from books.
+
+## Versions
+
+Current version: [v1.1.1](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases/tag/v1.1.1). See [CHANGELOG.md](./CHANGELOG.md) for changes and [Releases](https://github.com/HoraceLuBFA/zh-en-translation-polish/releases) for published versions.

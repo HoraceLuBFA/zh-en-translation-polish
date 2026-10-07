@@ -1,277 +1,160 @@
 # 中式英语病症诊断表（汉译英九步流水线细则）
 
-基于 Joan Pinkham《中式英语之鉴》十三章，按流水线顺序重组。每条含：汉语触发条件（什么中文会诱发它）→ 诊断测试（怎么机械地发现）→ 修法 → 判断边界（何时不改）。
+参考 Joan Pinkham《中式英语之鉴》的诊断思路，按本技能的工作流组织。下列译例为教学示例与改写，不作为原著逐字引文。触发词和句型只能提示检查位置，是否修改取决于源文、语境和目标语域。
 
-**目录**：一 冗余词（范畴词/套语/修饰语/对偶）· 二 重复 · 三 名词瘟疫 · 四 垂悬修饰语 · 五 平行结构 · 六 语序与焦点 · 七 逻辑连接词 · 八 代词与先行词 · 九 读音与连锁自检
-
----
+**目录**：一 冗余词 · 二 重复 · 三 名词化 · 四 垂悬修饰语 · 五 平行结构 · 六 语序与焦点 · 七 逻辑连接词 · 八 代词与先行词 · 九 读音与连锁自检
 
 ## 一、冗余词（流水线第 1 步）
 
 ### 1.1 范畴名词
 
-**汉语触发**：「……工作/问题/情况/事业/局面/方面/领域/现象/状态/过程/任务/做法/行为/因素/关系/环节/水平」挂在实义名词后。
+**汉语触发**：「……工作/问题/情况/事业/局面/方面/领域/现象/状态/过程/任务/做法/行为/因素/关系/环节/水平」。
 
-**诊断**：`X of Y` 且 X 是空壳总类词、Y 已是完整概念 → 删 X。反向检验：删掉后句意有无损失？
+**诊断**：检查 `X of Y` 中 X 是否有独立意义，或其意义已由 Y 完整表达。删后仍成句不等于删后等义。
 
-| 中文 | ❌ | ✅ |
+| 中文 | 可检查的表达 | 可能的简化 |
 |---|---|---|
 | 计划工作中的严重错误 | a serious mistake in the work of planning | a serious mistake in planning |
-| 推进和平统一大业 | promoting the cause of peaceful reunification | promoting peaceful reunification |
 | 反对浪费现象 | oppose the practice of extravagance | oppose extravagance |
 | 加上价格不稳定这一因素 | coupled with the factor of price instability | coupled with price instability |
 
-**边界**：范畴名词偶有实义——"in accordance with **the principle of** self-reliance" 保留；"adopt a policy of" 在赎买 vs 没收的对比语境里是实义。
+**边界**：the principle of self-reliance 中 principle 有实义；讨论赎买与没收的政策选择时，adopt a policy of 可能承载政策层级。problem、process 等不能仅按词形视为空词。
 
-### 1.2 冗余名词（语义已被别处包含）
+### 1.2 语义已被别处包含的名词
 
-「加快……的步伐」→ accelerate 已含 pace；「农业上获得丰收」→ harvest 已含；「……性的」→ 形容词已含 in nature；「一系列/各种」→ 复数 -s 已含；「实现……化」「加强……的建设」→ the realization of / the building of 全删。
-**边界**：时间词不总冗余——"**at present** it is necessary" 可能正是要说「只是暂时」。
+「加快步伐」有时可由 accelerate 表达；「……性的」有时可由形容词表达。但复数不自动表达「一系列」的有序性或「各种」的多样性，modernize 也不总覆盖「努力实现现代化」中的目标与尝试。时间词 at present 可能限制断言的适用时段，不能按修饰词位置删除。
 
-### 1.3 空壳架子结构
+### 1.3 架子结构
 
-grep：`the situation in which / a situation where / this state of affairs / the key to ... lies in / lies in the fact that / the fact that / is a subject that / constitute a period in which`。
-Strunk 对 "the fact that" 的裁定："It should be revised out of every sentence in which it occurs."（"situation" 是 "a particularly dangerous noun"。）
-修法：把架子后面真正的主谓提上来当主句。`the key to X lies in Y` → `X is to Y`。
+`the fact that / the situation in which / the key to ... lies in` 可提示检查句子是否绕远。必要时把实际主谓提出来，但这些结构本身合法；例如 the fact that 可在语法或信息组织中发挥作用。`the key to X lies in Y` 不能机械改成 `X is to Y`，须保留“关键”的判断。
 
 ### 1.4 范畴动词 + 名词
 
-**汉语触发**：进行/加以/作出/予以/给予/实现/实行/开展/从事/搞好/取得/起……作用/产生……影响。
+**汉语触发**：进行/加以/作出/予以/给予/实现/实行/开展/从事/取得/起作用/产生影响。
 
-**诊断**：`V + (a/the) + N + of/in/to/on/over`，V ∈ {make, have, give, provide, conduct, carry out, engage in, achieve, accomplish, realize, bring about, place, exercise, register, implement, adopt, take, perform}，且 N 有同根动词 → 名词还原为谓语动词。被动式变体（an improvement must be made in）同样算。
+若名词有对应动词，可比较简化前后的意思和角色：make an investigation of → investigate；give guidance to → guide；provide assistance to → assist；have an influence on → influence。make efforts to 可以按语境改成 try to，但不能直接删成后面的动作，否则尝试可能被写成结果。时态、完成状态、程度与施事均须复核。
 
-速查：make an investigation of = investigate · make efforts to = try · have an influence on = influence · give guidance to = guide · provide assistance to = assist · achieve success in = succeed in · accomplish the modernization of = modernize · bring about an improvement in = improve · place stress on = stress · exercise control over = control · register an increase = increase。
+### 1.5 引导性动词短语
 
-### 1.5 引导性套语动词短语
+**候选**：make great efforts to / try our best to / strive to；pay attention to / attach importance to；do a good job in；take measures to。
 
-**汉语触发词表**：努力/大力/积极/尽力/千方百计（→ make great efforts to / try our best to / strive to）；注意/重视/高度重视（→ pay attention to / attach importance to）；搞好/做好……工作/抓好（→ do a good job in）；采取措施/步骤（→ take measures to）。
+“做了某事”不必然意味着“努力做”“重视”或“做好”，反向亦不成立。处理时分别判断：确实无独立意义且已被其他成分表达的套语可省；承载目标、尝试、力度或优先级的短语保留其作用，可用自然表达重组；拿不准时保留意义，不按文体决定删除。give high priority to、focus on 和 attach importance to 侧重不同，不能无条件互换。
 
-**判据**：如果他们真做了那件事，就必然已经「努力/重视/做好」了 → 删前缀，动作直接做谓语。
+### 1.6 修饰语（按功能判断）
 
-**边界（原书明确保留的反例）**："we must **attach great importance to** scientific research institutes"——「重视」就是全句中心思想，只可改写不可删；"a good job must be done in medical-care work"——重点确实是「做好」，留 good 删 job → "good medical care must be provided"。
+1. **可能重复**：new innovations、final completion 等须核对是否存在特定对比或术语含义，确认重复才简化。
+2. **事实限定**：national、further、effective、successful 可能分别限定范围、推进阶段、有效性和完成结果，不能因常见就删。
+3. **强调**：extremely important 不自动等于 essential 或 imperative，替换时核对强度、必要性与原文修辞。
+4. **弱化**：fairly、relatively、basically、perhaps、may 等在任何文体中都可能承载近似、自谦或不确定性。需要换表达时保留其作用域与强度。
+5. **频率较高的副词**：resolutely、vigorously 等可检查分布与语域，频次不构成删除阈值。
 
-**★保留时的出口（三分法，不是二选一）**：判定「重视/努力/切实」是引导套语还是中心谓语——
-- 引导套语（后面的动作才是重点）→ **删**，动作做谓语；
-- 中心谓语（重视本身是政策优先级信号，如「政府要高度重视 X」）→ **保语义、换地道表达**：give (high/top) priority to X / prioritize X / focus on X——既不删丢力度，也不照搬 cliché 直译 attach great importance to；
-- 拿不准 → 政论档从保留，一般文本从删。
+**四问**：它表达什么？译文何处承载该意义？替换是否改变强度或范围？删除是否有信息损失？an acute crisis 等程度表达本身合法，须按源文选择。
 
-### 1.6 多余修饰语（五类，处置刚性递减）
+### 1.7 对偶与并列
 
-1. **冗余型**（new innovations / valuable treasure / final completion）→ 唯一可不犹豫直接删。
-2. **自明型**（适当地/切实/充分/「国民」经济）→ 多数删；首现且确指「追加」可留（further），**同一词必要性随出现次数递减**。
-3. **强调型**：强词被垫（serious chaos / firmly banned / broad masses）→ 删修饰语；弱词被垫（extremely important）→ 合并成一个强词（essential / imperative）；四大默认删：active(ly)、effective(ly)、actual(ly)、successful(ly)。**但可能因政治定式必须保留**（"the complete prohibition and thorough destruction of nuclear weapons"）。
-4. **弱化型**（比较/基本上/或许 → quite, rather, fairly, basically, perhaps）：无逻辑理由则删，perhaps/maybe → may/might。**但有意自谦必须保留**（"accomplished its tasks fairly well"—邓小平；学术 hedging 全部保留）。
-5. **陈词型**（resolutely, unswervingly, vigorously, conscientiously）：密度指标**每页 ≤2 次**；删或换新词（arduous → demanding）。高层公开表态宁留勿删。
+**候选**：讨论研究、挫折失败、经验教训、权利利益、支持帮助、巩固发展、加强改进、审议通过。
 
-**四问决策树**：必要吗？该带进英文吗？该连同被修饰词换一个更强的词吗？还是删？
-名家判据：选强词就要信任它独立站住（"I reject the accusation" 强于 "I utterly reject"）；用形容词标示**种类**而非程度（an economic crisis ✓，an acute crisis ✗）。
-
-### 1.7 冗余对偶（redundant twins）
-
-**汉语触发**：四字并列偏好——讨论研究/挫折失败/经验教训/困难和问题/权利和利益/支持和帮助/巩固和发展/加强和改进/审议并通过/培育和发展/情况和特点/体制和结构。
-
-**关键提问**：不是「这两个词有区别吗」（任何两个英文词都有区别），而是 **"In this context, does the second word add anything significant?"**
-
-**三条修法按序**：① 删其一（留更具体者）；② 两者皆换成一个更准的词（faraway, distant areas → remote；importance and urgency → priority）；③ 补词澄清（conditions and environment → working conditions and social environment）——补词是把汉语隐含的意思明说，**有误译风险，动手前想清楚**。
-
-**★缺省规则（反直觉）**：拿不准就**两个都留**。"It is generally better to risk including a redundancy than to risk losing an element of the intended sense."（Sol Adler："meaning must have priority over elegance."）文体定尺度：党代会讲话全保留，报纸社论毫不犹豫删。
-原书判定必须两个都留的例：意见和要求 opinions and demands / 权利和利益 rights and interests / 稳定与安全 stability and security / 审议并通过 examined and adopted。
-**反模式**：英语母语者也写 "strengthen and enhance"——不能因为「英语里也有」就放行。豁免仅限法律术语（null and void, each and every）与头韵诙谐语。
-
----
+分别检查两个成分是否承载不同动作、阶段、范围或评价。确认等义后才合并，存疑时保留两项。例如 opinions and demands、rights and interests、stability and security、examined and adopted 通常不能只因并列而删去一项。补出 working conditions and social environment 这类具体限定也须有源文依据，不能为消除抽象感而自行指定。
 
 ## 二、重复（第 1 步续）
 
-**总原则**（Follett）：同一篇文字里，同一个意思不应作为新信息出现第二次。
+### 2.1 重复的作用
 
-### 2.1 三类重复及汉语病灶
+arrive on time and be punctual 可能重复；arrive on time in order to catch the train 则可以表达有意义的目的。正反表达和关键词复现也可能承担对比、强调、节奏或承接功能。不要仅凭两部分相关就认定同义。
 
-| 类型 | 英文模式 | 汉语病灶 |
+### 2.2 处理顺序
+
+先回查中文求异义，防止译文把不同概念误译成相同意思。确认无新义后，再看重复是否有修辞作用；两者均无时才简化。法律文本、直接引语和作者标志性表达按任务要求保真。不能为消除重复而补入源文没有的转折、限定或因果。
+
+### 2.3 重复指称
+
+需要时可用 do so、代词、简称或概括名词缩短指称，但所指必须清楚。do so 的先行动作和语态须与当前句法相容；无法确定时保留完整表达。同词出现次数仅提示检查，不能强迫换词。首字母缩略按目标读者与惯例使用，首现解释；同义替换须语义等值。
+
+## 三、名词化（流水线第 2 步）
+
+**候选**：「……的实现/提高/加强/调整」、多个抽象名词和较长名词串。脚本按后缀估计密度，可能命中自然表达或术语，不能判断词性或概念角色。
+
+| 方法 | 可用场景 | 示例 |
 |---|---|---|
-| 简单复述 | arrive on time **and** be punctual | 四字对偶骈句（厉行节约、减少开支）；译者给意合句自补 and 造出 A→A 循环 |
-| 不言自明 | arrive on time **in order to catch the train** | 「以/以便/从而」引出的**定义性目的**（设立防疫机构以预防兽病） |
-| 正反镜像 | arrive on time **and not be late** | 「不是……而是」「决不……而要」「要……不要」 |
+| 换动词 | 名词化让动作难辨 | make an analysis of → analyze |
+| 换动名词 | 保留事件作为讨论对象 | economic revitalization will be arduous → revitalizing the economy will be arduous |
+| 换从句或形容词 | 更清楚地表达命题 | prove the correctness of these policies → prove that these policies are correct |
+| 保留名词 | 术语、抽象层次或未指定角色有作用 | model compression、research and development 等按语境保留 |
 
-### 2.2 处理顺序 ★
+不存在必须“去名词化”的终点。「探索模型压缩的可能性」可用 explore the possibilities for model compression；改为 investigate model compression techniques 会把可能性改成具体技术研究。每次改写都检查对象、范围、施事与认识状态。
 
-1. **先回查中文求异义**（首选，原书称「此类改动最为成功」）：英文两半看似同义 → 回原文，语义场有区别就是译文丢了义项（「交通」= transportation 还是 communication？「专业革命家」还是「革命的专业人员」？）。**英文逻辑讲不通（"strategy serves the past"）几乎必是误译。**
-2. 确认无新义才删（删较空泛的那半；三重表述至少砍到两重）。
-3. 无权删则弱化（法律/正式声明）：换措辞（unity → solidarity）、上位词、换句法位置——是妥协不是首选。
+due to、as a result of 等可在原有因果不变时改为 because 从句。例如 This resulted from our lack of vigilance → This happened because we were not vigilant enough；不能无依据增加 partly。lack of 等片段单独出现时并不自动表示因果。
 
-**允许保留**：对立两半指向不同主体/时段（我们必胜，敌人必败）；价值宣示（这是好事，不是坏事）；作者标志性文风（毛著英译）。保留必须是例外。
+### 3.1 名词串
 
-### 2.3 重复指称：先判「该不该指」，再判「用多长的形式指」
-
-**必须保留**的三判据：删后本句失去主语/所指（连贯性）；该实体承载本句新论断（定义句里的 socialism）；直接引语与条约原文**不得改写不得缩略不得代词化**。
-
-**六种缩短手法**：do so/do this（先行动作必须唯一且主动语态）· 删修饰语留中心词（the Conference）· 指示/物主词（that principle / such ventures / their development）· 概括名词（these matters / the two / this document）· 代词（词频判据：同一实词一句 ≥3 次或四句 ≥5 次须削减）· 首字母缩略（≥3 词专名出现 ≥3 次；首现全称+括号缩略）。
-
-**清晰度优先于简洁**：宁用 their development 不用 it；former/latter 仅限上文明确两项。即使改后字数没少，消除紧邻重复仍是改进；但换同义词必须语义等值。
-
----
-
-## 三、名词瘟疫（流水线第 2 步 ★收益最高）
-
-**汉语触发**：「……的实现/提高/加强/调整」（「的」字把任何动词挂成名词）；「……化」；「缺乏/由于/为了」（介词框架必然引出名词）；「进行/加以 + 双音节动词」。
-
-**机械诊断**：
-1. 一句里 `-tion/-sion/-ment/-ance/-ence/-ity/-ness/-ship/-al/-ure/-age/-cy` 结尾名词 ≥2 报警、≥3 必改。
-2. 对每个抽象名词问「**谁**做的？做的**什么**？」答不出 → 改。
-3. 主要动词是 is/constitutes/lies in/serves as/results from 这类空转系动词 → 真动词被名词吃掉了。
-
-**对治四法按序试**：
-
-| 法 | 适用 | 例 |
-|---|---|---|
-| ① 换动词（最优先） | 有同根动词 | Analysis is necessary even for the imperialist camp → It is necessary **to analyze** even the imperialist camp |
-| ② 换动名词 | 名词占主语/介词宾语位 | economic revitalization will be arduous → **revitalizing the economy** will be arduous；through cooperation with → **by cooperating with** |
-| ③ 换形容词/副词 | 表性质（-ness/-ity） | prove the correctness of these policies → prove that these policies **are correct**；blindness in action → acting **blindly** |
-| ④ 说白（备用，风险最高） | 仍答不出谁对谁做什么 | give full scope to the role of experts → take full advantage of the knowledge and abilities of experts |
-
-②是中途站不是终点；④补词必须对解读负责，上下文不足时**宁可保留含糊，不写错误解释**。
-
-**★修复不得收窄语义**：名词化修复会把开放概念变具体判断——「探索模型压缩的可能性」改成 explore whether the model can be compressed 就把开放的技术探索（剪枝/量化/蒸馏皆可）收窄成二元判断；此时用 investigate model compression techniques 之类保留覆盖面的动词结构。每次消名词化后回问一句：语义外延变小了吗？
-
-**关键杠杆**：due to / as a result of / lack of → **because 从句**，会自动逼出动词与主语：
-- This resulted from our lack of vigilance → This was partly **because we were not sufficiently vigilant**
-- auctioned off as a result of its loss-making operation → auctioned off **because it was operating at a loss**
-
-### 3.1 名词串（名词当形容词）
-
-**根因**：汉语字与字之间不写连接成分，机构名/项目名天然是名词串，直译即灾（`China Foreign Experts Employment Contract Disputes Arbitration Commission`）。
-
-**分级**：1 个名词作定语合法（income tax）；2 个须一望可知（water conservancy project）；**≥3 一般规则不允许**，例外仅限大写绑定的专名。
-
-**四法**：转词类（soil erosion control → to control soil erosion）→ **加介词**（economic recovery period → the period **of** economic recovery；一般优于连字符）→ 加连字符（固化复合形容词）→ 说白。
-**防误报**：判据是**读者熟悉度不是长度**——同一句里 geographical constituency demarcation 被拆，voter registration 保留。学科内已成术语的不拆（attention mechanism, machine translation）。
-
----
+名词串长度只是可读性线索，不设三个名词以上必改的规则。先识别固化术语和专名，再考虑介词、连字符、转词类或拆句。soil erosion control、voter registration、machine translation 等应按具体句法与读者背景判断；不为缩短串而改变术语结构。
 
 ## 四、垂悬修饰语（流水线第 3 步）
 
-**核心规则**：句首分词/动名词/不定式短语的隐含主语必须 = 主句主语；作形容词用的介词短语黏附主语。复合句里参照**所属小句**的主语。
+检查修饰语修饰谁、动作由谁完成，参照其所属小句。需要隐含动作主体的分词或不定式应与主句相容；独立结构、介词性表达和习惯表达须按实际语法判断，不能靠穷尽白名单裁决。
 
-**汉语无主句直译是垂悬的最大来源**——五类映射：
+| 情况 | 处理 |
+|---|---|
+| 无主句中的动作主体可以从上下文确认 | 可补有依据的主语或改成明确从句 |
+| 主体不明 | 使用被动、非人称表达或保留开放关系，不臆造 we、政府或某家公司 |
+| As X 与主语身份不相容 | 明确身份所属者，或改写为有依据的从句 |
+| 人物描写位置含混 | 重附着、拆句或明确所指，不以“次要”为由删除原文内容 |
 
-| 汉语结构 | 产生 | 首选处置 |
-|---|---|---|
-| 「经过/通过/在……中/这样做」+ 无主句 | 垂悬动名词（最高发） | 补 we/you 作主句主语，或改带主语的从句 |
-| 「为了……，必须（努力/采取措施）」 | 垂悬不定式 | `we must + 动词`，顺带消灭 efforts/measures 假主语 |
-| 受事主语句 /「……，使/从而……」 | 垂悬分词 | 改主动补施事；或 -ing → which 从句 / 同位语（an increase of 23%） |
-| 「作为X，……」话题≠主语 | 垂悬介词短语 | 补主语（As leaders, **we** must...）或改 Since I am... |
-| 与主旨无关的人物描写定语 | 垂悬形容词 | **直接删**（本章唯一推荐删的一类） |
+「通过裁员，公司的年度负债下降了」可译为 The company reduced its annual debt by cutting staff，前提是上下文支持公司为实施者。「凭借优越环境，任何投资都能获得回报」可译为 The favorable environment enables any investment to generate a return；原文未说地点和回报水平，不能补 Jiangxi Province 或 healthy returns。需核实的原文宣称可另作说明，不擅自调整。
 
-例：「通过裁员，公司的年度负债下降了」→ ❌ by cutting employees, **the annual debt** has decreased → ✅ by cutting employees, **the firm** has reduced its annual debt。
-「凭借优越环境，任何投资都能获得回报」→ ❌ With a favorable environment, any **investment** is assured → ✅ **Because Jiangxi Province has** a favorable environment, any investment there is assured of healthy returns。
-
-**白名单（防误报）**：generally speaking / judging from / barring / owing to / according to / provided (that) / concerning / regarding / assuming / allowing for / granted that。`considering` 作介词安全、带副词修饰时仍是分词。**`based on` 不在白名单**（→ On the basis of / In light of / Having studied）；`in order to serve you better` 类不豁免。裁定立场保守：**白名单外一律按垂悬处理。**
-
----
+generally speaking、judging from、according to 等通常可独立使用。Based on the data, the report recommends... 中 based on 可修饰 report；Based on the data, we recommend... 则需检查附着是否符合目标风格，必要时改为 On the basis of the data。不能一见 based on 就认定错误。
 
 ## 五、平行结构（流水线第 4 步）
 
-**根本差异**：中文并列靠语义同类成立，英语靠**语法同类 + 语义同类**双重成立。动笔前先为每串定统一词类（阶段 0.B 已做，这里核验）。
+并列项保持可理解的语法层级与语义关系，相关连词如 both...and、not only...but also 应放在对应成分之前。列表与同级标题可先定统一模板；比较结构核对两端是否为同类对象，如 tax receipts were higher than they were last year。
 
-四个强制区：
-
-1. **并列连词**（and/or/but/nor）：写出每项的类型，三项以上须**全部**同类。修法：少数派改成多数派；统一后仍别扭 → 它们逻辑上本不可比，弃用并列。灰区：名词与动名词混用无歧义可放行。
-2. **相关连词**（both...and / not only...but also / either...or）：比①更严，要求**逐字对齐**——介词对介词、从句对从句。`on the one hand/on the other hand` 按相关连词处理；`no sooner...than` 零自由度。
-3. **列表与标题**：`First... Second... Third` 各项同句型模板。**汉语公文动宾排比标题是高频灾区**——先扫完全部同级标题再定模板，首选 gerund（能吸收无主语动宾而不必编造主语），跨页也不豁免。
-4. **比较结构**（like / than / as...as）：两端必须同类事物——「与皇冠假日酒店一样，所有客房均配备……」→ Like **the rooms in** the Crowne Plaza, all **those in** the Holiday Inn feature...；tax receipts greater than **last year** → than **they were last year**。
-
-**精细化五项**：并列名词同为抽象或同为具体；动词语态统一；短语内部结构统一（allocation of land, **reduction of** rents, **increase in** wages）；**刻意重复关键词与句型模板**（中英审美正面冲突：中文近义换词避重复，英语平行靠重复强化——from their point of view... from the overall point of view）；同类状语占同一位置。
-
-**误导性平行**：形式平行但逻辑不平行——各项回答的不是同一个问题（品质 vs 尺寸）、一项是另一项的后果（行军与疲劳 → the exhaustion of constant marching）、存在层次混杂（deaths / the wounded / deserters → 统一为三个事件或三类人）。兜底判据：**起不出共同的上位名词就是不同类。**
-
----
+平行不要求所有词逐字对齐，也不能凭形式判断概念必须相同。语态、抽象与具体的不同可能由原意决定。刻意重复关键词可增强清晰度；若两项确有因果或层级关系，可按源文组织从句，但“行军与疲劳”不能自动改为“行军造成的疲劳”。
 
 ## 六、语序与焦点（流水线第 5 步）
 
-### 6.1 就近咬合（逻辑线）
+### 6.1 修饰关系
 
-每个介词短语/分词短语/关系从句，与**紧邻左侧的名词或动词**组成最小短语念一遍——事实上讲不通（钱不能治病、干部不选干部）→ 位置错。**跨过 that 的状语一律重查**（修饰主句动词还是从句动词：After years of effort, Gao said that... 变成「高经过多年努力才说」）。
-边界：就近读法讲得通就不算错；「读者能猜对」不构成免责。
+检查介词、分词与关系从句的可能附着对象，结合语法和上下文判断。就近阅读是诊断方法，最近名词不是唯一合法先行词。After years of effort, Gao said that... 可能把努力误连到“说”上，须回查原句要修饰的动作，再调整位置。
 
-### 6.2 尾重与句末焦点 ★汉英最系统性的冲突
+### 6.2 句末焦点
 
-英语句末是最强焦点位（Strunk & White）。汉语前重心 + 尾巴甩状语，直译必然让次要成分夺权。
+句末通常可承载新信息或重点，但时间、地点和来源本身也可能是焦点。根据前后文决定语序，不以最后几个词的类型裁决正误。They reached the Dabie Mountains in late August 与 In late August, they reached the Dabie Mountains 各有适用语境；调整次序不能补入 twenty days of exhausting marches 等未提供的经历。
 
-**诊断**：① 遮住整句只读最后 5–8 个词——这是本句最想让读者记住的吗？② 句末是纯时间/地点/来源/「以促进……」→ 几乎必错。③ 下一句展开的概念不是本句句末概念 → 焦点放错了人。
+### 6.3 主从关系
 
-**三位法**：句末 = 核心断言；句首 = 次要框架（日期、衔接）；句中 = 细节、原因、来源（长块沉中间不会被淹没）。
-配套：why 在 what 前（To promote the exchange of commodities, **we should set up**...）；negative 在 positive 前（not in light of our habits but **from the point of view of 600 million people**）；从属句前置主句压末。
-
-例：❌ they reached the Dabie Mountains **in late August** → ✅ **In late August,** after twenty days of exhausting marches, **they reached the Dabie Mountains**.
-
-**边界**：新闻导语例外（消息来源置句末是行业惯例）；焦点取决于上下文不是单句；几个次要短语内部次序自由；**改完读着别扭多半是焦点判断本身错了**。
-
-### 6.3 主从裁决
-
-汉语小句平铺无连词、权重相等——所有小句都译成 and 并列句 = **未做裁决**。判定主句（承载核心断言者），其余改 although/when/if/since 从句前置。多条件 → 一串平行 if 从句在前，结论压末。
-
----
+中文相邻分句可以是并列、时间、条件、让步或因果。先查关系是否有依据，再选并列或从属结构；没有足够依据时保留并列或拆句，不为突出主次强加 although、since 或 because。
 
 ## 七、逻辑连接词（流水线第 6 步）
 
-**铁律**：汉语原文没有连接词 ≠ 英译不需要。"When relations between ideas have only to be **suggested** in Chinese, they must be **plainly stated** in English." 不加连接词的译文是 "a plate of loose sand"。
+中文未明写连接词时，英语可能需要适当显化，但显化须有源文或上下文支持。先确认关系，再判断现有词汇是否已表达，最后按需加词。源文关系未定时，不以“让逻辑更清楚”为由补成确定因果。
 
-**补词决策流程**（对每对相邻分句 S1, S2）：
-1. 判关系（读完 S1 写下「读者预期 S2 说什么」；不符 → 转折/让步；是后果 → 因果；加强 → 递进）
-2. 现有词汇已显性表达？→ 查是否用错（见 7.2）
-3. 自明到无需标记？（遮住 S2 首短语读者能预判方向 → 可不加）
-4. 加词位置：转折词优先句中逗号夹住（In March 1983, **however**, ...），需强调才句首
-5. 重读整段，别连续三句都挂连接词
+### 7.1 while 与 with
 
-**优先级：因果 > 转折 > 增补**（因果缺失丢核心意义；转折缺失误导；增补缺失只是读起来跳）。实践偏向**补**——中国译者的风险从来是补得不够，不是补得太多。十二类连接词查词表见 `wordlists.md`。
+[while](https://dictionary.cambridge.org/grammar/british-grammar/while-and-whilst) 可表同时、对比或让步。只有当前语境中的不同读法影响理解时才改成 whereas、although 等；不得将所有非时间义 while 判错。with 可以表达伴随、背景、方式等关系，须按全句判断；With production increasing 不自动等于 Because production was increasing，更不必然等于 Thanks to production increasing。
 
-### 7.1 可疑连接词：while 与 with
+### 7.2 and、or 与因果
 
-**while 替换测试**：分别代入 during-the-time-that / although / whereas / and——**多于一种读得通 = 歧义，必改**；只有 and 读得通 = 滥用。默认策略：**while 只留给时间同时**；对比用 whereas / on the other hand（注意 while/whereas 从句**不能独立成句**，断句只能用 On the other hand）；让步用 although。
+- 「新建和改建公路」可用 build new roads and upgrade existing ones，保留两个工作类别。多个对象可以分别新建或改建，不能凭单条道路不能同时做两件事就把 and 改成 or。
+- 「公有制为主体，也有其他成分」可能是补充，也可能带对比，按上下文选择 and 或 but，不从“也”自动推断转折。
+- 「中国缺资金，有很多资源未开发」只给出两个相邻事实时，不能擅加 for that reason 或 unable；因果及能力判断须由上下文支持。
+- 「正因为难，更应重视」明示因果，应保留 precisely because 的关系，不能用 although 换成让步。
+- 「六年后」核对时间参照点：以过去叙事为基准可用 six years later，以说话时刻为基准可用 six years from now。
 
-**with 是汉译英特有灾区**（「随着……」条件反射译 With）。合法五类：伴随/施事/特征/方式/所属。之外问它真想表达什么：
-
-| ❌ 万能 with | ✅ |
-|---|---|
-| **With** the rapid increase of production..., Chen was promoted | **When** production began to increase rapidly... |
-| **With** professionals familiar with the law, these offices... | **Staffed by** professionals... |
-| It was **with** her leadership that... | It was **thanks to** her leadership that... |
-| **With** China's vast territory, ... | **Considering** China's vast territory... |
-| **With** wide streets and a small population, the city is filled with... | The city **has** wide streets... **It is** filled with...（无逻辑关系就拆句，不硬缝） |
-
-### 7.2 用错的连接词
-
-**根因：汉语「和/而/也」的语义宽度远大于英语 and。**
-
-- 「公有制为主体，**也**有其他成分」→ and 错，**but** there are also others（「也」实为转折）
-- 「新建**和**改建公路」→ build **or** upgrade（同一条路不能既建又改；未存在的路不能加 the）
-- 「中国缺资金，有很多资源未开发」→ 中文是因果：short of funds **and for that reason** unable to develop...
-- 「正因为难，更应重视」→ Difficult as it is = although，反了 → **Precisely because** it is so difficult
-- 「再过六年，到1960年」→ six years **later** 参照上文年份（会被算成 1962）；说话时刻参照用 six years **from now**
-
-专项测试：and → 两项能否同时成立？不能改 or。also/besides/likewise → S2 是支持还是削弱 S1？削弱换转折词。有时正确操作是**删**（Besides 把核心论据降级）；有时须同时改内容（补 particularly 才构成真对比）。类别对了即可，选词有自由度。
-
----
+同样检查条件范围：only if 表必要条件，if 通常引出充分条件式表达，不能互换；unless 与否定的组合也须单独核对。
 
 ## 八、代词与先行词（流水线第 7 步）
 
-**四条总则**：先行词必须 ① 明说 ② 无歧义 ③ 紧邻 ④ 数一致。**兜底修法：扔掉代词写名词——宁可重复，不要歧义。**
+指代应清楚、语义一致，必要时重复名词。检查可竞争的先行词、距离、主体变化和数量范围，不能仅按最近名词自动决定所指。
 
-1. **未明说**：汉语省主语，译者随手补 it/this/they。补出隐含主语**正是译者的职责**（"it is precisely the translator's duty to identify those ideas that a native speaker of Chinese understands by implication"），不能丢个 it 蒙混；但无从判断施动者时宁可主语含糊（lack → **no** sense of urgency）也不造假主语。`do so/do that` 的先行动作必须是**主动语态**。**补出的主体全篇一致**：汉语「要……。要……。」连续无主句默认同一施政主体，英译不得一句补 Governments at all levels 下一句漂移成 We——先定全篇主体（或统一非人格化表达），再逐句补。
-2. **歧义**：≥2 个数性匹配的候选。注意**句子主语对代词有超强吸引力**。修法要领：把第一个歧义代词换成名词，其后代词自动统一归位。
-3. **太远**：中间夹任何一个数性匹配的名词就算远。**关系代词必须紧贴先行词**——which 指整个前句时，把概念概括成名词塞到 which 前（..., **an operation in which** he played a key role / **a struggle which**...），或拆句（**This statement** is...）。这类错常是硬错不是歧义（"to shatter the Gang of Four, in which he played an important role"）。
-4. **不一致**：**中国译者错误几乎全在数**（汉语无单复数形态）。every/each/anyone/someone 一律单数；修法二选一：改代词就先行词，或**改先行词就代词**——单数导致别扭或被迫写 he or she 时，把先行词改复数（Every top official → **All top officials**... they），更顺且回避性别问题。
+1. **省略主体**：补出的主体须有源文依据；连续无主句不必然同一主体。跨段、换话题或换受访者时重新核对，无法确定则用适当的被动或非人称表达。
+2. **歧义**：有多个候选时，可用明确名词替换关键代词，再复查后续指代。
+3. **关系从句**：which 可指事物，也可在适当结构中指前一命题；实际附着不清时概括或拆句，不能自动补入 operation、struggle 等具体概念。
+4. **数量与分配**：each/every 与 all 的改写须保留逐一分配范围，例如 each participant submitted two files 不能含混成参与者合计提交两个文件。
 
-**灰色地带（防过度修改）**：集体名词（media/government/committee）单复任选一派**但全文一致**；singular they 正式译文回避（改复数先行词最省事）但**人称漂移（their→your）任何语体都是硬错**；被中间复数名词带偏、修饰语错位荒谬（cow that does not smoke or drink）是硬错必改。
-
----
+singular they 可按语境和目标风格使用，不强制改复数。集体名词的数随目标变体及集合/成员视角判断，保持上下文一致；media 等词还须按具体意义核对。人称变化可能来自引语、泛指或直接称呼，应先确认语用功能再判断。
 
 ## 九、读音与连锁自检（流水线第 8–9 步）
 
-**读音**：朗读。同一个词/同一个音在一句一段内反复撞击（Some-suffered-serious-setbacks 的 s 串）→ 换同义词（语义等值前提下）、换指代、重构句法。「生厌的临界点来得非常快。」
+朗读检查意外重复、拗口和节奏；源文有意重复、术语和必要指称可以保留。换同义词不得改变意义，也不为了避免同音而改变专名或引文。
 
-**连锁自检（每一步删改之后都做，不是最后做一次）**：
-- 每个 it/them/this/their 是否仍有唯一先行词？（刚删掉的名词可能正是先行词）
-- 是否新造出紧邻重复？（新引入的 this 与前文 in this way 撞车 → 把前文改成 Only then）
-- 主谓搭配是否仍成立？（删掉 situation 后 thriving 的主语是谁 → literature and art **flourish**）
-
-原书示范：单个病症的修复会生成新病症（去垂悬 → which 挂错 → 归位 → 状语离动词太远 → 三次迭代才收尾）。**流水线每步之后重跑诊断，而非一次通过。**
+每次修改后检查受影响部分：代词是否仍有清楚先行词，修饰语是否移接，主谓是否相容，否定和限定的范围是否变化，原文信息是否仍完整。新引入的 this 与旧表达重复时，可重构句子，不能无依据改成 Only then，额外添加必要条件或时间限制。问题修复并通过相关复核后停止，不为完成流水线反复改动已经自然准确的译文。
