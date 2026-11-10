@@ -29,7 +29,7 @@ Fidelity applies to every register. Preserve facts, numbers, qualifications, log
 | Speeches, essays, and personal writing | Meaningful repetition, rhythm, metaphor, and individual voice |
 | Existing English translations | Source-grounded checks for omissions, additions, and expression; accurate, natural wording can stay |
 
-English-to-Chinese translation, polishing prose originally written in English, and individual word lookups are outside the full workflow. Without the Chinese source, the skill can assess English expression but cannot establish translation fidelity. Summaries, abridgments, and promotional adaptations follow the scope explicitly requested by the user.
+The full workflow uses a Chinese source and its English translation. Fidelity review requires the Chinese original; an English draft alone can be reviewed for expression. Summaries, abridgments, and promotional adaptations follow the scope explicitly requested by the user.
 
 ## Installation
 
@@ -49,15 +49,11 @@ For a manual installation, clone into the shared skills directory. Inspect any e
 git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/skills/zh-en-translation-polish
 ```
 
-Check that `SKILL.md` exists and confirm availability in your host’s skill list. Discovery after a manual clone depends on host configuration; a file on disk does not prove that the skill is loaded. No other translation skill is required. The mechanical scanner needs Python 3 and uses only its standard library.
+Check that `SKILL.md` exists and confirm availability in your host’s skill list. Configure discovery for the current host after a manual clone. The skill supports independent use; the advisory scanner uses the Python 3 standard library.
 
 ### Website package and installation guide
 
-The [official detail page](https://www.lumenghe.com/en/skills/zh-en-translation-polish/) provides the complete ZIP, package date, source commit, SHA-256, and this README. [Release metadata](https://www.lumenghe.com/skills/zh-en-translation-polish/release.json) identifies the current website package; GitHub and the website provide complementary installation routes.
-
-> Read https://www.lumenghe.com/en/skills/zh-en-translation-polish/ and its installation guide, then install `zh-en-translation-polish` for my current host. Check the existing installation and preserve local changes, verify the ZIP's SHA-256, and report the installed source commit and host discovery result.
-
-See [INSTALL.en.md](./INSTALL.en.md) for path inspection, safe extraction, the shared installation directory, host discovery, dependencies, and verification. The [plain-text guide](https://www.lumenghe.com/en/skills/zh-en-translation-polish/install.txt) includes the exact download URL and checksum. Keep files under `~/.agents/skills/zh-en-translation-polish/`; configure a host-specific entry as described in the guide. The website ZIP and the stated source commit contain the same skill files and documentation. Documentation synchronized on **2026-11-10**; existing functional version identifiers are retained.
+The [detail page](https://www.lumenghe.com/en/skills/zh-en-translation-polish/) provides bilingual documentation and a complete ZIP. See [INSTALL.en.md](./INSTALL.en.md) for installation and verification; the [plain-text guide](https://www.lumenghe.com/en/skills/zh-en-translation-polish/install.txt) lists the current package URL and SHA-256. Package files match the stated GitHub source commit.
 
 ## Usage
 
@@ -83,7 +79,7 @@ For PDFs and other documents, the host’s available reading tools obtain the so
 | 4 · Scan | Run the advisory scanner on saved translations and assess its candidates |
 | 5 · Deliver | Follow the requested format; derive an English-only file from the checked bilingual file when needed |
 
-Long texts are translated and checked by section, speaker, or a few consecutive paragraphs, followed by a check of order, completeness, terminology, and reference after assembly. Length, paragraph counts, zero warnings, and model self-reports do not establish semantic quality. There is no compression target.
+Long texts are translated and checked by section, speaker, or a few consecutive paragraphs, followed by a check of order, completeness, terminology, and reference after assembly. Assess meaning through source-to-translation review and let the source information determine length.
 
 ## File format and example
 
@@ -112,7 +108,7 @@ Maintainers can run the mechanical regression suite:
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-[test-prompts.json](./test-prompts.json) contains trigger, exclusion, boundary, and semantic quality cases with a separate evaluation protocol. These support future model evaluation; passing script tests does not demonstrate translation quality.
+[test-prompts.json](./test-prompts.json) contains trigger, exclusion, boundary, and semantic quality cases with a separate evaluation protocol. Use these cases for model evaluation and assess translation quality against the semantic criteria.
 
 ## Repository contents
 
@@ -131,7 +127,7 @@ For the reverse direction, see the sister skill [en-zh-translation-polish](https
 
 ## Credits and license
 
-The code, prompts, and organization are released under the [MIT License](./LICENSE). The methods draw on Joan Pinkham’s *The Translator’s Guide to Chinglish* (Foreign Language Teaching and Research Press, 2000) and Lu Guoqiang’s *汉译英常用表达式经典惯例* (Shanghai Foreign Language Education Press, 2012). Reference tables are teaching adaptations for this skill and do not replace the books; rights to the original works and quotations remain with their respective holders. Thanks to [cangjie-skill](https://github.com/kangarooking/cangjie-skill) for its tools for organizing methods from books.
+The code, prompts, and organization are released under the [MIT License](./LICENSE). The methods draw on Joan Pinkham’s *The Translator’s Guide to Chinglish* (Foreign Language Teaching and Research Press, 2000) and Lu Guoqiang’s *汉译英常用表达式经典惯例* (Shanghai Foreign Language Education Press, 2012). Reference tables adapt the methods for this skill; rights to the original works and quotations remain with their respective holders. Thanks to [cangjie-skill](https://github.com/kangarooking/cangjie-skill) for its tools for organizing methods from books.
 
 ## Versions
 

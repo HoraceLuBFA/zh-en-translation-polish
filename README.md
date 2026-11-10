@@ -16,7 +16,7 @@
 
 本技能用于中文译英文，以及对照中文原文润色已有英文译稿。它借鉴 Joan Pinkham《中式英语之鉴》的诊断方法和陆国强《汉译英常用表达式经典惯例》的结构组织方法，先理清意义与语义角色，再选择自然的英语表达，最后双向核对原文和译文。
 
-忠实性适用于所有文体。润色保留原文的事实、数字、限定、逻辑、语气和意象，区分尝试与结果、可能与确定、时间先后与因果。简化表达以前，先确认意义已完整保留；自然度和简洁度都不能替代准确性。
+忠实性适用于所有文体。润色保留原文的事实、数字、限定、逻辑、语气和意象，区分尝试与结果、可能与确定、时间先后与因果。简化表达时先核对意义完整性，在准确的基础上提升自然度和简洁度。
 
 ## 适用场景与边界
 
@@ -29,7 +29,7 @@
 | 演讲、散文与个人表达 | 保留有作用的重复、节奏、比喻和个人语气 |
 | 已有英文译稿 | 结合中文检查遗漏、增译及表达问题，准确自然的部分可以保留 |
 
-英译中、直接以英文写作的润色和单个词语查询不属于本技能的完整流程。中文源文缺失时，可以先检查英文表达，但无法据此确认翻译忠实度。摘要、节译、宣传改写等需求以用户明确指定的范围为准。
+本技能完整流程面向中文源文及其英文译稿；核对翻译忠实度需要提供中文原文，单独的英文稿可先检查表达。摘要、节译、宣传改写等需求以用户明确指定的范围为准。
 
 ## 安装
 
@@ -49,15 +49,11 @@ npx skills add -g HoraceLuBFA/zh-en-translation-polish
 git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/skills/zh-en-translation-polish
 ```
 
-安装后检查 `SKILL.md` 是否存在，并在宿主的技能列表中确认可用。手动克隆后的发现方式取决于宿主配置，文件存在本身不代表已经加载。技能可独立使用，无需安装其他翻译技能；机械扫描需要 Python 3，仅使用标准库。
+安装后检查 `SKILL.md` 是否存在，并在宿主的技能列表中确认可用。手动克隆后按宿主配置发现入口；技能可独立使用，机械扫描需要 Python 3 标准库。
 
 ### 官网完整包与安装指南
 
-[官网详情页](https://www.lumenghe.com/skills/zh-en-translation-polish/)提供完整 ZIP、打包日期、来源提交、SHA-256 和本 README；[发布元数据](https://www.lumenghe.com/skills/zh-en-translation-polish/release.json)记录当前官网包。GitHub 与官网共同提供安装入口。
-
-> 请先读取 https://www.lumenghe.com/skills/zh-en-translation-polish/ 及其安装指南，再为当前宿主安装 `zh-en-translation-polish`。检查已有安装并保留本地修改，校验 ZIP 的 SHA-256，完成后报告安装的来源提交与宿主发现结果。
-
-[INSTALL.md](./INSTALL.md)列明路径检查、安全解压、共享安装目录、宿主发现、依赖与验证步骤；[纯文本指南](https://www.lumenghe.com/skills/zh-en-translation-polish/install.txt)另附当前下载链接和校验值。技能文件保留在 `~/.agents/skills/zh-en-translation-polish/`，宿主入口按指南配置。官网 ZIP 与所标示来源提交使用相同的技能文件和文档。文档同步日期为 **2026-11-10**，功能版本沿用原有标识。
+[官网详情页](https://www.lumenghe.com/skills/zh-en-translation-polish/)提供双语说明与完整 ZIP。[INSTALL.md](./INSTALL.md)列明安装及验证步骤，[纯文本指南](https://www.lumenghe.com/skills/zh-en-translation-polish/install.txt)附当前下载链接与 SHA-256。安装包文件与标示的 GitHub 来源提交一致。
 
 ## 使用方式
 
@@ -70,7 +66,7 @@ git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/
 
 短段落直接在聊天中交付，不强制生成文件或展示完整诊断过程。用户指定的纯英文、双语和目标文件优先，已有目标文件按要求更新。
 
-PDF 或其他文档通过宿主当前可用的读取工具获取原文。正文、图注、公式、引文和参考文献按任务范围保留；无法可靠提取的部分会说明缺口，不能以推测补齐。
+PDF 或其他文档通过宿主当前可用的读取工具获取原文。正文、图注、公式、引文和参考文献按任务范围保留；提取过程中标明缺口，译文逐项依据已获取的原文。
 
 ## 工作流程
 
@@ -83,7 +79,7 @@ PDF 或其他文档通过宿主当前可用的读取工具获取原文。正文�
 | 4 · 机械扫描 | 对落盘译文运行候选扫描，人工判断每条提示 |
 | 5 · 交付 | 按要求输出；需要全英文文件时，从已核查的对照文件派生 |
 
-长文按章节、发言者或连续小段分批翻译并就地核对，合并后再检查顺序、缺段、术语和指代。篇幅、段落数、零警告及模型自述均不能证明语义合格，也不设压缩率目标。
+长文按章节、发言者或连续小段分批翻译并就地核对，合并后再检查顺序、缺段、术语和指代。语义质量通过逐段对照核查，篇幅随原文信息量自然展开。
 
 ## 文件格式与输出示例
 
@@ -112,7 +108,7 @@ python3 scripts/chinglish_scan.py "文章 翻译(全英文).md" --plain
 python3 -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-[test-prompts.json](./test-prompts.json) 包含触发、排除、边界与语义质量案例，以及独立的评估方法。案例用于后续模型评估；脚本测试通过不代表实际翻译质量已通过评测。
+[test-prompts.json](./test-prompts.json) 包含触发、排除、边界与语义质量案例，以及独立的评估方法。案例用于模型评估，翻译质量另按语义标准逐项核查。
 
 ## 仓库内容
 
