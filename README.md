@@ -51,6 +51,14 @@ git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/
 
 安装后检查 `SKILL.md` 是否存在，并在宿主的技能列表中确认可用。手动克隆后的发现方式取决于宿主配置，文件存在本身不代表已经加载。技能可独立使用，无需安装其他翻译技能；机械扫描需要 Python 3，仅使用标准库。
 
+### 官网完整包与安装指南
+
+[官网详情页](https://www.lumenghe.com/skills/zh-en-translation-polish/)提供完整 ZIP、打包日期、来源提交、SHA-256 和本 README；[发布元数据](https://www.lumenghe.com/skills/zh-en-translation-polish/release.json)记录当前官网包。GitHub 与官网共同提供安装入口。
+
+> 请先读取 https://www.lumenghe.com/skills/zh-en-translation-polish/ 及其安装指南，再为当前宿主安装 `zh-en-translation-polish`。检查已有安装并保留本地修改，校验 ZIP 的 SHA-256，完成后报告安装的来源提交与宿主发现结果。
+
+[INSTALL.md](./INSTALL.md)列明路径检查、安全解压、共享安装目录、宿主发现、依赖与验证步骤；[纯文本指南](https://www.lumenghe.com/skills/zh-en-translation-polish/install.txt)另附当前下载链接和校验值。技能文件保留在 `~/.agents/skills/zh-en-translation-polish/`，宿主入口按指南配置。官网 ZIP 与所标示来源提交使用相同的技能文件和文档。文档同步日期为 **2026-11-10**，功能版本沿用原有标识。
+
 ## 使用方式
 
 安装并启用后，可以直接提出自然语言请求，也可以在支持显式调用的宿主中点名 `zh-en-translation-polish`。请提供待译中文；润色译稿时最好同时提供中文与英文。

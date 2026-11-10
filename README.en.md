@@ -51,6 +51,14 @@ git clone https://github.com/HoraceLuBFA/zh-en-translation-polish.git ~/.agents/
 
 Check that `SKILL.md` exists and confirm availability in your host’s skill list. Discovery after a manual clone depends on host configuration; a file on disk does not prove that the skill is loaded. No other translation skill is required. The mechanical scanner needs Python 3 and uses only its standard library.
 
+### Website package and installation guide
+
+The [official detail page](https://www.lumenghe.com/en/skills/zh-en-translation-polish/) provides the complete ZIP, package date, source commit, SHA-256, and this README. [Release metadata](https://www.lumenghe.com/skills/zh-en-translation-polish/release.json) identifies the current website package; GitHub and the website provide complementary installation routes.
+
+> Read https://www.lumenghe.com/en/skills/zh-en-translation-polish/ and its installation guide, then install `zh-en-translation-polish` for my current host. Check the existing installation and preserve local changes, verify the ZIP's SHA-256, and report the installed source commit and host discovery result.
+
+See [INSTALL.en.md](./INSTALL.en.md) for path inspection, safe extraction, the shared installation directory, host discovery, dependencies, and verification. The [plain-text guide](https://www.lumenghe.com/en/skills/zh-en-translation-polish/install.txt) includes the exact download URL and checksum. Keep files under `~/.agents/skills/zh-en-translation-polish/`; configure a host-specific entry as described in the guide. The website ZIP and the stated source commit contain the same skill files and documentation. Documentation synchronized on **2026-11-10**; existing functional version identifiers are retained.
+
 ## Usage
 
 Once installed and enabled, ask in natural language or name `zh-en-translation-polish` in a host that supports explicit invocation. Supply the Chinese text; for revision, include both the Chinese source and the English draft whenever possible.
